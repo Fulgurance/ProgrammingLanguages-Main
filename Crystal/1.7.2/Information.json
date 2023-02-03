@@ -24,7 +24,7 @@
     },
     {
       "name": "Libevent",
-      "version": ">=7.6",
+      "version": ">=2.1.12",
       "options": []
     },
   ],
