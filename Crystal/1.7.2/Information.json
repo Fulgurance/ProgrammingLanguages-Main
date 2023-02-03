@@ -27,6 +27,11 @@
       "version": ">=2.1.12",
       "options": []
     },
+    {
+      "name": "Pcre",
+      "version": ">=8.45",
+      "options": []
+    }
   ],
   "options": []
 }
