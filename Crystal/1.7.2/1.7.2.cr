@@ -14,8 +14,7 @@ class Target < ISM::Software
     
     def prepareInstallation
         super
-        makeSource([Ism.settings.makeOptions,"DESTDIR=#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}","install"],buildDirectoryPath)
-        deleteFile("#{Ism.settings.rootPath}/usr/bin/crystal")
+        makeSource([Ism.settings.makeOptions,"PREFIX=/usr","DESTDIR=#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}","install"],buildDirectoryPath)
     end
 
 end
