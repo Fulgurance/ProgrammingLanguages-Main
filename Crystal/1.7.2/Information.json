@@ -14,12 +14,12 @@
   "dependencies": [
     {
       "name": "Llvm",
-      "version": ">=8.0",
+      "version": ">=8.0.0",
       "options": []
     },
     {
       "name": "Gc",
-      "version": ">=7.6",
+      "version": ">=7.6.0",
       "options": ["libatomic_ops"]
     },
     {
@@ -29,7 +29,7 @@
     },
     {
       "name": "Pcre",
-      "version": ">=8.45",
+      "version": ">=8.45.0",
       "options": []
     }
   ],
