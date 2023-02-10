@@ -20,7 +20,7 @@
     {
       "name": "Gc",
       "version": ">=7.6.0",
-      "options": ["libatomic_ops"]
+      "options": []
     },
     {
       "name": "Libevent",
