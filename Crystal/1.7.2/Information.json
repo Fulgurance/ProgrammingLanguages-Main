@@ -1,5 +1,5 @@
 {
-  "port": "ProgrammingLanguage-Main",
+  "port": "ProgrammingLanguages-Main",
   "name": "Crystal",
   "version": "1.7.2",
   "architectures": ["x86_64"],
