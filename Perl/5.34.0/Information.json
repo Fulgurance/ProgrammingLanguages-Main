@@ -16,5 +16,18 @@
       "options": []
     }
   ],
-  "options": []
+  "options": [
+    {
+      "name": "Pass1",
+      "description": "Enable the phase 1 of the cross toolchain building",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Bison",
+          "version": "3.7.6",
+          "options": ["Pass1"]
+        }
+      ]
+    }
+  ]
 }
