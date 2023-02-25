@@ -29,9 +29,13 @@ class Target < ISM::Software
         super
 
         makeSource([Ism.settings.makeOptions,"DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
+    end
+
+    def install
+        super
 
         if !option("Pass1")
-            makeLink("python3","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/python",:symbolicLink)
+            makeLink("python3","#{Ism.settings.rootPath}usr/bin/python",:symbolicLink)
         end
     end
 
