@@ -1,0 +1,30 @@
+{
+  "port": "ProgrammingLanguages-Main",
+  "name": "Rustc",
+  "version": "1.52.0",
+  "architectures": ["x86_64"],
+  "description": "Language empowering everyone to build reliable and efficient software",
+  "website": "https://www.rust-lang.org/",
+  "downloadLinks": ["https://static.rust-lang.org/dist/rustc-1.52.0-src.tar.gz"],
+  "md5sums": ["bd6fbe9ba5fe457d2514e92a6ccd7b24"],
+  "patchesLinks": [],
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "name": "Curl",
+      "version": "7.78.0",
+      "options": []
+    },
+    {
+      "name": "Cmake",
+      "version": "3.21.2",
+      "options": []
+    },
+    {
+      "name": "Libssh2",
+      "version": "1.9.0",
+      "options": []
+    }
+  ],
+  "options": []
+}
