@@ -1,0 +1,35 @@
+{
+  "port": "ProgrammingLanguages-Main",
+  "name": "Js",
+  "version": "78.13.0",
+  "architectures": ["x86_64"],
+  "description": "JavaScript interpreter and libraries",
+  "website": "https://spidermonkey.dev",
+  "downloadLinks": ["https://archive.mozilla.org/pub/firefox/releases/78.13.0esr/source/firefox-78.13.0esr.source.tar.xz"],
+  "md5sums": ["872623fc9f93ea8d3f3290024f0c0925"],
+  "patchesLinks": [],
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "name": "Autoconf",
+      "version": "2.13.0",
+      "options": []
+    },
+    {
+      "name": "Icu",
+      "version": "69.1.0",
+      "options": []
+    },
+    {
+      "name": "Rustc",
+      "version": "1.52.0",
+      "options": []
+    },
+    {
+      "name": "Which",
+      "version": "2.21.0",
+      "options": []
+    }
+  ],
+  "options": []
+}
