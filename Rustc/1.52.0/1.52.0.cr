@@ -44,9 +44,7 @@ class Target < ISM::Software
         runPythonCommand(   ["./x.py","build","install"],
                             buildDirectoryPath,
                             {"DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}",
-                            "LIBSSH2_SYS_USE_PKG_CONFIG" => 1})
-        puts "Check first the files before installations please"
-        exit 1
+                            "LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
     end
 
 end
