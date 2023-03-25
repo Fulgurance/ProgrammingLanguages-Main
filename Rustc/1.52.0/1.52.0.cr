@@ -41,7 +41,7 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        runPythonCommand(   ["./x.py","build","install"],
+        runPythonCommand(   ["./x.py","install"],
                             buildDirectoryPath,
                             {"DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}",
                             "LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
