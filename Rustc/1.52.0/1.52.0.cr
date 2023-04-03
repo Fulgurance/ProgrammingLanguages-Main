@@ -48,9 +48,16 @@ class Target < ISM::Software
 
         makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/profile.d")
 
-        copyFile("#{Ism.settings.rootPath}etc/ld.so.conf","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/ld.so.conf")
+        if File.exists?("#{Ism.settings.rootPath}etc/ld.so.conf")
+            copyFile("#{Ism.settings.rootPath}etc/ld.so.conf","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/ld.so.conf")
+        else
+            generateEmptyFile("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/ld.so.conf")
+        end
+
         if File.exists?("#{Ism.settings.rootPath}etc/profile.d/rustc.sh")
             copyFile("#{Ism.settings.rootPath}etc/profile.d/rustc.sh","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/profile.d/rustc.sh")
+        else
+            generateEmptyFile("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/profile.d/rustc.sh")
         end
 
         ldSoConfData = <<-CODE
