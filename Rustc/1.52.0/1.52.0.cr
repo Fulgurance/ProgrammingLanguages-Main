@@ -61,7 +61,6 @@ class Target < ISM::Software
         pathprepend /opt/rustc/bin PATH
         CODE
         fileUpdateContent("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/profile.d/rustc.sh",rustcShData)
-        end
     end
 
     def install
