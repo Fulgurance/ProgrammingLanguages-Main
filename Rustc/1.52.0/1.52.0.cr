@@ -46,7 +46,7 @@ class Target < ISM::Software
                             {"DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}",
                             "LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
 
-        makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/profile.d/rustc.sh")
+        makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/profile.d")
 
         copyFile("#{Ism.settings.rootPath}etc/ld.so.conf","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/ld.so.conf")
         if File.exists?("#{Ism.settings.rootPath}etc/profile.d/rustc.sh")
