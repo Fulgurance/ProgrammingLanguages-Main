@@ -68,7 +68,7 @@ class Target < ISM::Software
 
         makeLink("rustc-1.52.0","#{Ism.settings.rootPath}opt/rustc",:symbolicLinkByOverwrite)
         runLdconfigCommand
-        sourceFile("#{Ism.settings.rootPath}etc/profile.d/rustc.sh")
+        sourceFile(["#{Ism.settings.rootPath}etc/profile.d/rustc.sh"])
     end
 
 end
