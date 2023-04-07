@@ -7,6 +7,7 @@ class Target < ISM::Software
     
     def configure
         super
+
         runCmakeCommand([   "-DCMAKE_INSTALL_PREFIX=/usr",
                             "-DLLVM_ENABLE_FFI=ON",
                             "-DCMAKE_BUILD_TYPE=Release",
@@ -23,11 +24,13 @@ class Target < ISM::Software
 
     def build
         super
-        runNinjaCommand(Array(String).new,buildDirectoryPath)
+
+        runNinjaCommand(path: buildDirectoryPath)
     end
     
     def prepareInstallation
         super
+
         runNinjaCommand(["install"],buildDirectoryPath,{"DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}"})
     end
 
