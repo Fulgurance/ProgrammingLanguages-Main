@@ -34,8 +34,8 @@ class Target < ISM::Software
         super
 
         runPythonCommand(   ["./x.py","build","--exclude","src/tools/miri"],
-                            buildDirectoryPath,
-                            {"RUSTFLAGS" => "\"-C link-args=-lffi\""})
+                            buildDirectoryPath)#,
+                            #{"RUSTFLAGS" => "\"-C link-args=-lffi\""})
     end
     
     def prepareInstallation
