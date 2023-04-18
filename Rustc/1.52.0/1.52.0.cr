@@ -27,7 +27,7 @@ class Target < ISM::Software
         [target.i686-unknown-linux-gnu]
         llvm-config = "/usr/bin/llvm-config"
         CODE
-        fileWriteData("#{buildDirectoryPath}/config.toml",configData)
+        fileWriteData("#{buildDirectoryPath(false)}/config.toml",configData)
     end
     
     def build
