@@ -47,28 +47,17 @@ class Target < ISM::Software
                             "LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
 
         makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/profile.d")
-
-        if File.exists?("#{Ism.settings.rootPath}etc/ld.so.conf")
-            copyFile("#{Ism.settings.rootPath}etc/ld.so.conf","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/ld.so.conf")
-        else
-            generateEmptyFile("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/ld.so.conf")
-        end
-
-        if File.exists?("#{Ism.settings.rootPath}etc/profile.d/rustc.sh")
-            copyFile("#{Ism.settings.rootPath}etc/profile.d/rustc.sh","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/profile.d/rustc.sh")
-        else
-            generateEmptyFile("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/profile.d/rustc.sh")
-        end
+        makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/ld.so.conf.d")
 
         ldSoConfData = <<-CODE
         /opt/rustc/lib
         CODE
-        fileUpdateContent("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/ld.so.conf",ldSoConfData)
+        fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/ld.so.conf.d/rustc.conf",ldSoConfData)
 
         rustcShData = <<-CODE
         pathprepend /opt/rustc/bin PATH
         CODE
-        fileUpdateContent("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/profile.d/rustc.sh",rustcShData)
+        fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/profile.d/rustc.sh",rustcShData)
     end
 
     def install
