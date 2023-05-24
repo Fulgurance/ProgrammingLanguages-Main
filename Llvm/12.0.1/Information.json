@@ -5,9 +5,6 @@
   "architectures": ["x86_64"],
   "description": "Collection of modular and reusable compiler and toolchain technologies",
   "website": "https://github.com/llvm/llvm-project",
-  "downloadLinks": ["https://github.com/llvm/llvm-project/releases/download/llvmorg-12.0.1/llvm-12.0.1.src.tar.xz"],
-  "md5sums": ["72a257604efa1d32ef85a37cd9c66873"],
-  "patchesLinks": [],
   "installedFiles": [],
   "dependencies": [
     {

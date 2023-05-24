@@ -5,9 +5,6 @@
   "architectures": ["x86_64"],
   "description": "JavaScript interpreter and libraries",
   "website": "https://spidermonkey.dev",
-  "downloadLinks": ["https://archive.mozilla.org/pub/firefox/releases/78.13.0esr/source/firefox-78.13.0esr.source.tar.xz"],
-  "md5sums": ["872623fc9f93ea8d3f3290024f0c0925"],
-  "patchesLinks": [],
   "installedFiles": [],
   "dependencies": [
     {
