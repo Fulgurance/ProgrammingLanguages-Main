@@ -1,11 +1,5 @@
 class Target < ISM::Software
 
-    def extract
-        super
-
-        moveFile("#{workDirectoryPath(false)}/firefox-78.13.0","#{workDirectoryPath(false)}/firefox-78.13.0esr.source")
-    end
-
     def prepare
         @buildDirectory = true
         @buildDirectoryName = "obj"
