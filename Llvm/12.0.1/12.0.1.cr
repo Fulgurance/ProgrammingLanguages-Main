@@ -3,6 +3,14 @@ class Target < ISM::Software
     def prepare
         @buildDirectory = true
         super
+
+        if option("Clang")
+            moveFile("#{workDirectoryPath(false)}/Clang","#{mainWorkDirectoryPath(false)}/tools/clang")
+        end
+
+        if option("Compiler-Rt")
+            moveFile("#{workDirectoryPath(false)}/Compiler-Rt","#{mainWorkDirectoryPath(false)}/tools/compiler-rt")
+        end
     end
     
     def configure

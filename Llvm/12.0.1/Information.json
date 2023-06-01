@@ -13,5 +13,18 @@
       "options": []
     }
   ],
-  "options": []
+  "options": [
+    {
+      "name": "Clang",
+      "description": "Enable clang support",
+      "active": true,
+      "dependencies": []
+    },
+    {
+      "name": "Compiler-Rt",
+      "description": "Enable compiler-rt support",
+      "active": false,
+      "dependencies": []
+    }
+  ]
 }
