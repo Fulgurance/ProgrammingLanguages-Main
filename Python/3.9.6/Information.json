@@ -55,6 +55,18 @@
           "options": ["Pass1"]
         }
       ]
+    },
+    {
+      "name": "Sqlite",
+      "description": "Enable sqlite support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Sqlite",
+          "version": "3.36.0",
+          "options": []
+        }
+      ]
     }
   ]
 }
