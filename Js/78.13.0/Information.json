@@ -2,7 +2,9 @@
   "port": "ProgrammingLanguages-Main",
   "name": "Js",
   "version": "78.13.0",
-  "architectures": ["x86_64"],
+  "architectures": [
+    "x86_64"
+  ],
   "description": "JavaScript interpreter and libraries",
   "website": "https://spidermonkey.dev",
   "installedFiles": [],

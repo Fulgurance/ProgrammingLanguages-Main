@@ -2,7 +2,9 @@
   "port": "ProgrammingLanguages-Main",
   "name": "Rustc",
   "version": "1.52.0",
-  "architectures": ["x86_64"],
+  "architectures": [
+    "x86_64"
+  ],
   "description": "Language empowering everyone to build reliable and efficient software",
   "website": "https://www.rust-lang.org/",
   "installedFiles": [],

@@ -2,7 +2,9 @@
   "port": "ProgrammingLanguages-Main",
   "name": "Perl",
   "version": "5.34.0",
-  "architectures": ["x86_64"],
+  "architectures": [
+    "x86_64"
+  ],
   "description": "Highly capable, feature-rich programming language",
   "website": "https://www.perl.org/",
   "installedFiles": [],
@@ -10,7 +12,9 @@
     {
       "name": "SystemBase",
       "version": "0.2.0",
-      "options": ["Pass3"]
+      "options": [
+        "Pass3"
+      ]
     },
     {
       "name": "Gdbm",
@@ -38,9 +42,12 @@
         {
           "name": "Bison",
           "version": "3.7.6",
-          "options": ["Pass1"]
+          "options": [
+            "Pass1"
+          ]
         }
-      ]
+      ],
+      "kernelDependencies": []
     }
   ]
 }

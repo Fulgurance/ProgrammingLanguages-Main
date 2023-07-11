@@ -2,7 +2,9 @@
   "port": "ProgrammingLanguages-Main",
   "name": "Python",
   "version": "3.9.6",
-  "architectures": ["x86_64"],
+  "architectures": [
+    "x86_64"
+  ],
   "description": "Programming language that lets you work more quickly and integrate your systems more effectively",
   "website": "https://www.python.org/",
   "installedFiles": [],
@@ -10,7 +12,9 @@
     {
       "name": "SystemBase",
       "version": "0.2.0",
-      "options": ["Pass3"]
+      "options": [
+        "Pass3"
+      ]
     },
     {
       "name": "Expat",
@@ -53,9 +57,12 @@
         {
           "name": "Perl",
           "version": "5.34.0",
-          "options": ["Pass1"]
+          "options": [
+            "Pass1"
+          ]
         }
-      ]
+      ],
+      "kernelDependencies": []
     },
     {
       "name": "Sqlite",
@@ -67,7 +74,8 @@
           "version": "3.36.0",
           "options": []
         }
-      ]
+      ],
+      "kernelDependencies": []
     }
   ]
 }
