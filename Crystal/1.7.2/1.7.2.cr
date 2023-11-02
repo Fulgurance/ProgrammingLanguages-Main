@@ -3,9 +3,8 @@ class Target < ISM::Software
     def build
         super
 
-        makeSource( [Ism.settings.makeOptions],
-                    buildDirectoryPath,
-                    {"PATH" => "$PATH:#{workDirectoryPath}/Crystal-Compiler-1.7.2/bin"})
+        makeSource( path: buildDirectoryPath,
+                    environment: {"PATH" => "$PATH:#{workDirectoryPath}/Crystal-Compiler-1.7.2/bin"})
     end
     
     def prepareInstallation

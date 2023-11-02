@@ -40,9 +40,9 @@ class Target < ISM::Software
         super
 
         if option("Pass1")
-            makeSource([Ism.settings.makeOptions],buildDirectoryPath)
+            makeSource(path: buildDirectoryPath)
         else
-            makeSource([Ism.settings.makeOptions,"BUILD_ZLIB=False","BUILD_BZIP2=0"],buildDirectoryPath)
+            makeSource(["BUILD_ZLIB=False","BUILD_BZIP2=0"],buildDirectoryPath)
         end
     end
     
@@ -50,9 +50,9 @@ class Target < ISM::Software
         super
 
         if option("Pass1")
-            makeSource([Ism.settings.makeOptions,"DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
+            makeSource(["DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
         else
-            makeSource([Ism.settings.makeOptions,"BUILD_ZLIB=False","BUILD_BZIP2=0","DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
+            makeSource(["BUILD_ZLIB=False","BUILD_BZIP2=0","DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
         end
     end
 
