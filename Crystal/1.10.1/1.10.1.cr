@@ -4,7 +4,7 @@ class Target < ISM::Software
         super
 
         makeSource( path: buildDirectoryPath,
-                    environment: {"PATH" => "$PATH:#{workDirectoryPath}/Crystal-Compiler-1.10.1/bin"})
+                    environment: {"PATH" => "#{ENV["PATH"]}:#{workDirectoryPath}/Crystal-Compiler-1.10.1/bin"})
     end
     
     def prepareInstallation
