@@ -1,0 +1,45 @@
+{
+  "port": "ProgrammingLanguages-Main",
+  "name": "Js",
+  "version": "102.13.0",
+  "architectures": [
+    "x86_64"
+  ],
+  "description": "JavaScript interpreter and libraries",
+  "website": "https://spidermonkey.dev",
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "name": "Icu",
+      "version": "73.2.0",
+      "options": []
+    },
+    {
+      "name": "Rustc",
+      "version": "1.71.1",
+      "options": []
+    },
+    {
+      "name": "Which",
+      "version": "2.21.0",
+      "options": []
+    }
+  ],
+  "kernelDependencies": [],
+  "options": [
+    {
+      "name": "Llvm",
+      "description": "Enable llvm support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Llvm",
+          "version": "16.0.5",
+          "options": ["Clang"]
+        }
+      ],
+      "kernelDependencies": []
+    }
+  ],
+  "uniqueOptions": []
+}

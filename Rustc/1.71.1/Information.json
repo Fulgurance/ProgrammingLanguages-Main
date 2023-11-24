@@ -1,0 +1,53 @@
+{
+  "port": "ProgrammingLanguages-Main",
+  "name": "Rustc",
+  "version": "1.52.0",
+  "architectures": [
+    "x86_64"
+  ],
+  "description": "Language empowering everyone to build reliable and efficient software",
+  "website": "https://www.rust-lang.org/",
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "name": "Curl",
+      "version": "8.2.1",
+      "options": []
+    },
+    {
+      "name": "Cmake",
+      "version": "3.27.2",
+      "options": []
+    }
+  ],
+  "kernelDependencies": [],
+  "options": [
+    {
+      "name": "Libssh2",
+      "description": "Enable libssh2 support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Libssh2",
+          "version": "1.11.0",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
+      "name": "Llvm",
+      "description": "Enable llvm support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Llvm",
+          "version": "16.0.5",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    }
+  ],
+  "uniqueOptions": []
+}
