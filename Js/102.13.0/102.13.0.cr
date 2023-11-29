@@ -4,6 +4,7 @@ class Target < ISM::Software
         @buildDirectory = true
         @buildDirectoryName = "obj"
         super
+
     end
     
     def configure
