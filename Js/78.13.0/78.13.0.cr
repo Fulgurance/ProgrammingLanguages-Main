@@ -2,7 +2,7 @@ class Target < ISM::Software
 
     def prepare
         @buildDirectory = true
-        @buildDirectoryNames[:mainBuild] = "obj"
+        @buildDirectoryNames["MainBuild"] = "obj"
         super
     end
     
