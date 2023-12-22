@@ -44,7 +44,7 @@ class Target < ISM::Software
 
         runNinjaCommand(["install"],buildDirectoryPath,{"DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}"})
 
-        copyFile("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/bin/FileCheck","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/bin/FileCheck")
+        copyFile("#{buildDirectoryPath(false)}#{Ism.settings.rootPath}/bin/FileCheck","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/bin/FileCheck")
     end
 
 end
