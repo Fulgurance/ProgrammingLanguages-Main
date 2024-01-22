@@ -6,14 +6,16 @@ class Target < ISM::Software
         if option("Pass1")
             configureSource([   "--prefix=/usr",
                                 "--enable-shared",
-                                "--without-ensurepip"],
+                                "--without-ensurepip",
+                                "--disable-test-modules"],
                                 buildDirectoryPath)
         else
             configureSource([   "--prefix=/usr",
                                 "--enable-shared",
                                 "--with-system-expat",
                                 "--with-system-ffi",
-                                "--enable-optimizations"],
+                                "--enable-optimizations",
+                                "--disable-test-modules"],
                                 buildDirectoryPath)
         end
     end
