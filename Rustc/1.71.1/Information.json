@@ -2,21 +2,21 @@
   "port": "ProgrammingLanguages-Main",
   "name": "Rustc",
   "version": "1.71.1",
-  "architectures": [
-    "x86_64"
-  ],
+  "architectures": ["x86_64"],
   "description": "Language empowering everyone to build reliable and efficient software",
   "website": "https://www.rust-lang.org/",
   "installedFiles": [],
   "dependencies": [
     {
+      "port": "NetworkingLibraries-Main",
       "name": "Curl",
-      "version": "8.2.1",
+      "version": ">=8.2.1",
       "options": []
     },
     {
+      "port": "ProgrammingTools-Main",
       "name": "Cmake",
-      "version": "3.27.2",
+      "version": ">=3.27.2",
       "options": []
     }
   ],
@@ -28,8 +28,9 @@
       "active": false,
       "dependencies": [
         {
+          "port": "BaseLibraries-Main",
           "name": "Libssh2",
-          "version": "1.11.0",
+          "version": ">=1.11.0",
           "options": []
         }
       ],
@@ -41,8 +42,9 @@
       "active": false,
       "dependencies": [
         {
+          "port": "ProgrammingLanguages-Main",
           "name": "Llvm",
-          "version": "16.0.5",
+          "version": ">=16.0.5",
           "options": []
         }
       ],
