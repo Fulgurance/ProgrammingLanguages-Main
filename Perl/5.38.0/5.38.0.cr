@@ -4,7 +4,7 @@ class Target < ISM::Software
         super
 
         if option("Pass1")
-            runScript("Configure",[ "-des",
+            runFile("Configure",[ "-des",
                                     "-Dprefix=/usr",
                                     "-Dvendorprefix=/usr",
                                     "-Duseshrplib",
@@ -18,7 +18,7 @@ class Target < ISM::Software
                                     "-Dman3dir=/usr/share/man/man3"],
                                     buildDirectoryPath)
         else
-            runScript("Configure",[ "-des",
+            runFile("Configure",[ "-des",
                                     "-Dprefix=/usr",
                                     "-Dvendorprefix=/usr",
                                     "-Dprivlib=/usr/lib/perl5/5.38/core_perl",

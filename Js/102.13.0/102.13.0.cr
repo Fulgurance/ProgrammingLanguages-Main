@@ -10,7 +10,7 @@ class Target < ISM::Software
     def configure
         super
 
-        runScript(  "../js/src/configure.in",
+        runFile(  "../js/src/configure.in",
                     [   "--prefix=/usr",
                         "--with-intl-api",
                         "--with-system-zlib",
