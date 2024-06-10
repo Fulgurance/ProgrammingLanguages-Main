@@ -5,11 +5,11 @@ class Target < ISM::Software
         super
 
         if option("Clang")
-            moveFile("#{workDirectoryPath(false)}/Clang","#{mainWorkDirectoryPath(false)}/tools/clang")
+            moveFile("#{workDirectoryPath}/Clang","#{mainWorkDirectoryPath}/tools/clang")
         end
 
         if option("Compiler-Rt")
-            moveFile("#{workDirectoryPath(false)}/Compiler-Rt","#{mainWorkDirectoryPath(false)}/projects/compiler-rt")
+            moveFile("#{workDirectoryPath}/Compiler-Rt","#{mainWorkDirectoryPath}/projects/compiler-rt")
         end
     end
     
@@ -40,11 +40,11 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/bin")
+        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin")
 
         runNinjaCommand(["install"],buildDirectoryPath,{"DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}"})
 
-        copyFile("#{buildDirectoryPath(false)}/bin/FileCheck","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}/usr/bin/FileCheck")
+        copyFile("#{buildDirectoryPath}/bin/FileCheck","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin/FileCheck")
     end
 
 end

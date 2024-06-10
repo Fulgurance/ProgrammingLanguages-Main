@@ -30,7 +30,7 @@ class Target < ISM::Software
         [target.i686-unknown-linux-gnu]
         llvm-config = "/usr/bin/llvm-config"
         CODE
-        fileWriteData("#{buildDirectoryPath(false)}/config.toml",configData)
+        fileWriteData("#{buildDirectoryPath}/config.toml",configData)
     end
     
     def build
@@ -49,7 +49,7 @@ class Target < ISM::Software
                             {"DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}",
                             "LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
 
-        deleteAllFilesRecursivelyFinishing("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}",".old")
+        deleteAllFilesRecursivelyFinishing("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}",".old")
     end
 
 end
