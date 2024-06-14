@@ -10,15 +10,15 @@ class Target < ISM::Software
     def configure
         super
 
-        runFile(  "../js/src/configure.in",
-                    [   "--prefix=/usr",
-                        "--with-intl-api",
-                        "--with-system-zlib",
-                        "--with-system-icu",
-                        "--disable-jemalloc",
-                        "--disable-debug-symbols",
-                        "--enable-readline"],
-                        buildDirectoryPath)
+        runFile(file:       "../js/src/configure.in",
+                arguments:  "--prefix=/usr          \
+                            --with-intl-api         \
+                            --with-system-zlib      \
+                            --with-system-icu       \
+                            --disable-jemalloc      \
+                            --disable-debug-symbols \
+                            --enable-readline",
+                path:       buildDirectoryPath)
     end
     
     def build
@@ -30,7 +30,8 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        makeSource(["DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
+        makeSource( arguments:  "DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath} install",
+                    path:       buildDirectoryPath)
     end
 
     def install

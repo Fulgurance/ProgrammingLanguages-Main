@@ -4,17 +4,17 @@ class Target < ISM::Software
         super
 
         if option("Pass1")
-            configureSource([   "--prefix=/usr",
-                                "--enable-shared",
-                                "--without-ensurepip"],
-                                buildDirectoryPath)
+            configureSource(arguments:  "--prefix=/usr  \
+                                        --enable-shared \
+                                        --without-ensurepip",
+                            path:       buildDirectoryPath)
         else
-            configureSource([   "--prefix=/usr",
-                                "--enable-shared",
-                                "--with-system-expat",
-                                "--with-system-ffi",
-                                "--enable-optimizations"],
-                                buildDirectoryPath)
+            configureSource(arguments:  "--prefix=/usr      \
+                                        --enable-shared     \
+                                        --with-system-expat \
+                                        --with-system-ffi   \
+                                        --enable-optimizations",
+                            path:       buildDirectoryPath)
         end
     end
     
@@ -27,10 +27,13 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        makeSource(["DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
+        makeSource( arguments:  "DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath} install",
+                    path:       buildDirectoryPath)
 
         if !option("Pass1")
-            makeLink("python3","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/python",:symbolicLink)
+            makeLink(   target: "python3",
+                        path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/python",
+                        type:   :symbolicLink)
         end
     end
 

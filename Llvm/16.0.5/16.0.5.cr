@@ -5,30 +5,32 @@ class Target < ISM::Software
         super
 
         if option("Clang")
-            moveFile("#{workDirectoryPath}/Clang","#{mainWorkDirectoryPath}/tools/clang")
+            moveFile(   "#{workDirectoryPath}/Clang",
+                        "#{mainWorkDirectoryPath}/tools/clang")
         end
 
         if option("Compiler-Rt")
-            moveFile("#{workDirectoryPath}/Compiler-Rt","#{mainWorkDirectoryPath}/projects/compiler-rt")
+            moveFile(   "#{workDirectoryPath}/Compiler-Rt",
+                        "#{mainWorkDirectoryPath}/projects/compiler-rt")
         end
     end
     
     def configure
         super
 
-        runCmakeCommand([   "-DCMAKE_INSTALL_PREFIX=/usr",
-                            "-DLLVM_ENABLE_FFI=ON",
-                            "-DCMAKE_BUILD_TYPE=Release",
-                            "-DLLVM_BUILD_LLVM_DYLIB=ON",
-                            "-DLLVM_LINK_LLVM_DYLIB=ON",
-                            "-DLLVM_ENABLE_RTTI=ON",
-                            "-DLLVM_TARGETS_TO_BUILD=\"host;AMDGPU;BPF\"",
-                            "-DLLVM_BINUTILS_INCDIR=/usr/include",
-                            "-DLLVM_INCLUDE_BENCHMARKS=OFF",
-                            "-DCLANG_DEFAULT_PIE_ON_LINUX=ON",
-                            "-Wno-dev -G Ninja .."],
-                            buildDirectoryPath,
-                            {"CC" => "gcc","CXX" => "g++"})
+        runCmakeCommand(arguments:      "-DCMAKE_INSTALL_PREFIX=/usr                \
+                                        -DLLVM_ENABLE_FFI=ON                        \
+                                        -DCMAKE_BUILD_TYPE=Release                  \
+                                        -DLLVM_BUILD_LLVM_DYLIB=ON                  \
+                                        -DLLVM_LINK_LLVM_DYLIB=ON                   \
+                                        -DLLVM_ENABLE_RTTI=ON                       \
+                                        -DLLVM_TARGETS_TO_BUILD=\"host;AMDGPU;BPF\" \
+                                        -DLLVM_BINUTILS_INCDIR=/usr/include         \
+                                        -DLLVM_INCLUDE_BENCHMARKS=OFF               \
+                                        -DCLANG_DEFAULT_PIE_ON_LINUX=ON             \
+                                        -Wno-dev -G Ninja ..",
+                        path:           buildDirectoryPath,
+                        environment:    {"CC" => "gcc","CXX" => "g++"})
     end
 
     def build
@@ -42,9 +44,12 @@ class Target < ISM::Software
 
         makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin")
 
-        runNinjaCommand(["install"],buildDirectoryPath,{"DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}"})
+        runNinjaCommand(arguments:      "install",
+                        path:           buildDirectoryPath,
+                        environment:    {"DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}"})
 
-        copyFile("#{buildDirectoryPath}/bin/FileCheck","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin/FileCheck")
+        copyFile(   "#{buildDirectoryPath}/bin/FileCheck",
+                    "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin/FileCheck")
     end
 
 end

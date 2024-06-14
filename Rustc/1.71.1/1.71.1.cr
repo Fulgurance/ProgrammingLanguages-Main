@@ -36,20 +36,20 @@ class Target < ISM::Software
     def build
         super
 
-        runPythonCommand(   ["./x.py","build"],
-                            buildDirectoryPath,
-                            {"LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
+        runPythonCommand(   arguments:      "./x.py build",
+                            path:           buildDirectoryPath,
+                            environment:    {"LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
     end
     
     def prepareInstallation
         super
 
-        runPythonCommand(   ["./x.py","install"],
-                            buildDirectoryPath,
-                            {"DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}",
-                            "LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
+        runPythonCommand(   arguments:      "./x.py install",
+                            path:           buildDirectoryPath,
+                            environment:    {   "DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}",
+                                                "LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
 
-        deleteAllFilesRecursivelyFinishing( path: "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}",
+        deleteAllFilesRecursivelyFinishing( path:       "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}",
                                             extensions: [".old"])
     end
 
