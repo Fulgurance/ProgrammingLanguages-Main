@@ -15,7 +15,7 @@ class Target < ISM::Software
                                 -Dsitearch=/usr/lib/perl5/5.38/site_perl        \
                                 -Dvendorlib=/usr/lib/perl5/5.38/vendor_perl     \
                                 -Dvendorarch=/usr/lib/perl5/5.38/vendor_perl    \
-                                -Dman1dir=/usr/share/man/man1
+                                -Dman1dir=/usr/share/man/man1                   \
                                 -Dman3dir=/usr/share/man/man3",
                     path:       buildDirectoryPath)
         else
