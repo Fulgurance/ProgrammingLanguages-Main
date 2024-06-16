@@ -50,7 +50,7 @@ class Target < ISM::Software
                                                 "LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
 
         deleteAllFilesRecursivelyFinishing( path:       "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}",
-                                            extensions: [".old"])
+                                            extensions: ["old"])
     end
 
 end
