@@ -27,6 +27,7 @@ class Target < ISM::Software
                                         -DLLVM_TARGETS_TO_BUILD=\"host;AMDGPU;BPF\" \
                                         -DLLVM_BINUTILS_INCDIR=/usr/include         \
                                         -DLLVM_INCLUDE_BENCHMARKS=OFF               \
+                                        -DLLVM_ENABLE_LIBCXX=ON                     \
                                         -DCLANG_DEFAULT_PIE_ON_LINUX=ON             \
                                         -Wno-dev -G Ninja ..",
                         path:           buildDirectoryPath,
