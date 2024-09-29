@@ -11,6 +11,7 @@ class Target < ISM::Software
         link-shared = true
 
         [build]
+        full-bootstrap = true
         docs = false
         extended = true
         locked-deps = true
