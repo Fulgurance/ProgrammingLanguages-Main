@@ -16,6 +16,7 @@ class Target < ISM::Software
         locked-deps = true
         tools = ["cargo", "clippy", "rustdoc", "rustfmt"]
         vendor = true
+        build = "#{Ism.settings.systemTarget}"
 
         [install]
         prefix = "/usr"
