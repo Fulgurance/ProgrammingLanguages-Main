@@ -11,7 +11,7 @@ class Target < ISM::Software
         link-shared = true
 
         [build]
-        full-bootstrap = true
+        target = #{Ism.settings.systemTarget}
         docs = false
         extended = true
         locked-deps = true
@@ -26,6 +26,7 @@ class Target < ISM::Software
         channel = "stable"
 
         [target.#{Ism.settings.systemTarget}]
+        linker = #{Ism.settings.systemTarget}-gcc
         llvm-config = "/usr/bin/llvm-config"
         CODE
         fileWriteData("#{buildDirectoryPath}/config.toml",configData)
@@ -34,7 +35,7 @@ class Target < ISM::Software
     def build
         super
 
-        runPythonCommand(   arguments:      "./x.py build",
+        runPythonCommand(   arguments:      "./x.py build --target=#{Ism.settings.systemTarget}",
                             path:           buildDirectoryPath,
                             environment:    {"LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
     end
