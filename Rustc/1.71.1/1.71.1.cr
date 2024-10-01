@@ -19,7 +19,7 @@ class Target < ISM::Software
                 "linker"
                 ]
             },
-            "linker-flavor": "gnu-lld-cc",
+            "linker-flavor": "gcc",
             "llvm-target": "#{Ism.settings.systemTarget}",
             "max-atomic-width": 64,
             "metadata": {
