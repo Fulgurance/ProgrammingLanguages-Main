@@ -14,22 +14,10 @@ class Target < ISM::Software
             "has-rpath": true,
             "has-thread-local": true,
             "is-builtin": false,
-            "link-self-contained": {
-                "components": [
-                "linker"
-                ]
-            },
             "linker-flavor": "gcc",
             "llvm-target": "#{Ism.settings.systemTarget}",
             "max-atomic-width": 64,
-            "metadata": {
-                "description": "64-bit Linux (kernel 3.2+, glibc 2.17+)",
-                "host_tools": true,
-                "std": true,
-                "tier": 1
-            },
             "os": "linux",
-            "plt-by-default": false,
             "position-independent-executables": true,
             "pre-link-args": {
                 "gcc": [
