@@ -11,7 +11,7 @@ class Target < ISM::Software
         link-shared = true
 
         [build]
-        target = "#{Ism.settings.systemTarget}"
+        target = ["#{Ism.settings.systemTarget}"]
         docs = false
         extended = true
         locked-deps = true
