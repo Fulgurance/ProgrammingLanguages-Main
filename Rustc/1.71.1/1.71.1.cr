@@ -35,7 +35,7 @@ class Target < ISM::Software
     def build
         super
 
-        runPythonCommand(   arguments:      "./x.py build --target=#{Ism.settings.systemTarget}",
+        runPythonCommand(   arguments:      "./x.py build",
                             path:           buildDirectoryPath,
                             environment:    {"LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
     end
