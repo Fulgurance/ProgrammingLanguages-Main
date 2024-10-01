@@ -13,7 +13,7 @@ class Target < ISM::Software
             "env": "gnu",
             "has-rpath": true,
             "has-thread-local": true,
-            "is-builtin": true,
+            "is-builtin": false,
             "link-self-contained": {
                 "components": [
                 "linker"
@@ -32,10 +32,10 @@ class Target < ISM::Software
             "plt-by-default": false,
             "position-independent-executables": true,
             "pre-link-args": {
-                "gnu-cc": [
+                "gcc": [
                 "-m64"
                 ],
-                "gnu-lld-cc": [
+                "ld": [
                 "-m64"
                 ]
             },
@@ -50,9 +50,7 @@ class Target < ISM::Software
                 "memory",
                 "thread",
                 "cfi",
-                "kcfi",
-                "safestack",
-                "dataflow"
+                "kcfi"
             ],
             "supported-split-debuginfo": [
                 "packed",
