@@ -94,7 +94,7 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        runPythonCommand(   arguments:      "./x.py install",
+        runPythonCommand(   arguments:      "./x.py install --target #{buildDirectoryPath}/#{Ism.settings.systemTarget}.json",
                             path:           buildDirectoryPath,
                             environment:    {   "DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}",
                                                 "LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
