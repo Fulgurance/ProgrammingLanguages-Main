@@ -11,6 +11,8 @@ class Target < ISM::Software
         link-shared = true
 
         [build]
+        build-stage = 2
+        test-stage = 2
         target = ["#{Ism.settings.systemTarget}"]
         docs = false
         extended = true
