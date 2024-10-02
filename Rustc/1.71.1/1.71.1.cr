@@ -86,7 +86,7 @@ class Target < ISM::Software
     def build
         super
 
-        runPythonCommand(   arguments:      "./x.py build library/std --target #{buildDirectoryPath}/#{Ism.settings.systemTarget}.json",
+        runPythonCommand(   arguments:      "./x.py build library/std library/stdarch --target #{buildDirectoryPath}/#{Ism.settings.systemTarget}.json",
                             path:           buildDirectoryPath,
                             environment:    {"LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
     end
@@ -94,7 +94,7 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        runPythonCommand(   arguments:      "./x.py install library/std --target #{buildDirectoryPath}/#{Ism.settings.systemTarget}.json",
+        runPythonCommand(   arguments:      "./x.py install library/std library/stdarch --target #{buildDirectoryPath}/#{Ism.settings.systemTarget}.json",
                             path:           buildDirectoryPath,
                             environment:    {   "DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}",
                                                 "LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
