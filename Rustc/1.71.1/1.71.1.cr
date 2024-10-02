@@ -75,7 +75,7 @@ class Target < ISM::Software
         docdir = "share/doc/rustc-1.71.1"
 
         [rust]
-        channel = "stable"
+        channel = "nightly"
 
         [target.#{Ism.settings.systemTarget}]
         llvm-config = "/usr/bin/llvm-config"
