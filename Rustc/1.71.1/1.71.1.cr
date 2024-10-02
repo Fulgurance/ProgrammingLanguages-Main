@@ -75,7 +75,6 @@ class Target < ISM::Software
         docdir = "share/doc/rustc-1.71.1"
 
         [rust]
-        codegen-units-std = 1
         channel = "stable"
 
         [target.#{Ism.settings.systemTarget}]
