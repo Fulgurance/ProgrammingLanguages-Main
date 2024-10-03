@@ -76,9 +76,13 @@ class Target < ISM::Software
 
         [rust]
         channel = "nightly"
+        dist-src = false
 
         [target.#{Ism.settings.systemTarget}]
         llvm-config = "/usr/bin/llvm-config"
+
+        [dist]
+		src-tarball = false
         CODE
         fileWriteData("#{buildDirectoryPath}/config.toml",configData)
     end
