@@ -63,7 +63,7 @@ class Target < ISM::Software
         link-shared = true
 
         [build]
-        target = ["#{Ism.settings.systemTarget}"]
+        target = ["x86_64-unknown-linux-gnu","#{Ism.settings.systemTarget}"]
         docs = false
         extended = true
         locked-deps = true
@@ -75,14 +75,13 @@ class Target < ISM::Software
         docdir = "share/doc/rustc-1.71.1"
 
         [rust]
-        channel = "nightly"
-        dist-src = false
+        channel = "stable"
+
+        [target.x86_64-unknown-linux-gnu]
+        llvm-config = "/usr/bin/llvm-config"
 
         [target.#{Ism.settings.systemTarget}]
         llvm-config = "/usr/bin/llvm-config"
-
-        [dist]
-        src-tarball = false
         CODE
         fileWriteData("#{buildDirectoryPath}/config.toml",configData)
     end
@@ -90,7 +89,7 @@ class Target < ISM::Software
     def build
         super
 
-        runPythonCommand(   arguments:      "./x.py build --target #{buildDirectoryPath}/#{Ism.settings.systemTarget}.json",
+        runPythonCommand(   arguments:      "./x.py build --target x86_64-unknown-linux-gnu --target #{buildDirectoryPath}/#{Ism.settings.systemTarget}.json",
                             path:           buildDirectoryPath,
                             environment:    {"LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
     end
@@ -98,7 +97,7 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        runPythonCommand(   arguments:      "./x.py install --target #{buildDirectoryPath}/#{Ism.settings.systemTarget}.json",
+        runPythonCommand(   arguments:      "./x.py install --target x86_64-unknown-linux-gnu --target #{buildDirectoryPath}/#{Ism.settings.systemTarget}.json",
                             path:           buildDirectoryPath,
                             environment:    {   "DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}",
                                                 "LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
