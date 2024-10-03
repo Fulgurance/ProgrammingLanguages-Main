@@ -82,7 +82,7 @@ class Target < ISM::Software
         llvm-config = "/usr/bin/llvm-config"
 
         [dist]
-		src-tarball = false
+        src-tarball = false
         CODE
         fileWriteData("#{buildDirectoryPath}/config.toml",configData)
     end
