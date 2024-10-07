@@ -77,8 +77,8 @@ class Target < ISM::Software
         [rust]
         channel = "stable"
 
-        [target.x86_64-unknown-linux-gnu]
-        llvm-config = "/usr/bin/llvm-config"
+        #[target.x86_64-unknown-linux-gnu]
+        #llvm-config = "/usr/bin/llvm-config"
 
         [target.#{Ism.settings.systemTarget}]
         llvm-config = "/usr/bin/llvm-config"
@@ -89,7 +89,7 @@ class Target < ISM::Software
     def build
         super
 
-        runPythonCommand(   arguments:      "./x.py build --target x86_64-unknown-linux-gnu,#{buildDirectoryPath}/#{Ism.settings.systemTarget}.json",
+        runPythonCommand(   arguments:      "./x.py build --target #{Ism.settings.systemTarget}",
                             path:           buildDirectoryPath,
                             environment:    {"LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
     end
@@ -97,7 +97,7 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        runPythonCommand(   arguments:      "./x.py install --target x86_64-unknown-linux-gnu,#{buildDirectoryPath}/#{Ism.settings.systemTarget}.json",
+        runPythonCommand(   arguments:      "./x.py install --target #{Ism.settings.systemTarget}",
                             path:           buildDirectoryPath,
                             environment:    {   "DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}",
                                                 "LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
