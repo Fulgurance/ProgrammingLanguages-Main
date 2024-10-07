@@ -89,7 +89,7 @@ class Target < ISM::Software
     def build
         super
 
-        runPythonCommand(   arguments:      "./x.py build --target x86_64-unknown-linux-gnu --target #{buildDirectoryPath}/#{Ism.settings.systemTarget}.json",
+        runPythonCommand(   arguments:      "./x.py build --target x86_64-unknown-linux-gnu,#{buildDirectoryPath}/#{Ism.settings.systemTarget}.json",
                             path:           buildDirectoryPath,
                             environment:    {"LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
     end
@@ -97,7 +97,7 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        runPythonCommand(   arguments:      "./x.py install --target x86_64-unknown-linux-gnu --target #{buildDirectoryPath}/#{Ism.settings.systemTarget}.json",
+        runPythonCommand(   arguments:      "./x.py install --target x86_64-unknown-linux-gnu,#{buildDirectoryPath}/#{Ism.settings.systemTarget}.json",
                             path:           buildDirectoryPath,
                             environment:    {   "DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}",
                                                 "LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
