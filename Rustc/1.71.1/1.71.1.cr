@@ -67,7 +67,7 @@ class Target < ISM::Software
         docs = false
         extended = true
         locked-deps = true
-        tools = ["cargo", "clippy", "rustdoc", "rustfmt"]
+        tools = ["cargo", "xargo", "clippy", "rustdoc", "rustfmt"]
         vendor = true
 
         [install]
