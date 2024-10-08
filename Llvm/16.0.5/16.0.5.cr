@@ -25,7 +25,7 @@ class Target < ISM::Software
                                         -DLLVM_BUILD_LLVM_DYLIB=ON                      \
                                         -DLLVM_LINK_LLVM_DYLIB=ON                       \
                                         -DLLVM_ENABLE_RTTI=ON                           \
-                                        -DLLVM_TARGETS_TO_BUILD=\"host\"     \
+                                        -DLLVM_TARGETS_TO_BUILD=\"host;BPF\"     \
                                         -DLLVM_BINUTILS_INCDIR=/usr/include             \
                                         -DLLVM_INCLUDE_BENCHMARKS=OFF                   \
                                         -DCLANG_DEFAULT_PIE_ON_LINUX=ON                 \
