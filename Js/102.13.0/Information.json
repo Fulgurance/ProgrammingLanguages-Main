@@ -15,7 +15,7 @@
     },
     {
       "port": "ProgrammingLanguages-Main",
-      "name": "Rustc",
+      "name": "Rust",
       "version": ">=1.71.1",
       "options": []
     },

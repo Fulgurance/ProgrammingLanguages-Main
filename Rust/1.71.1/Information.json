@@ -1,6 +1,6 @@
 {
   "port": "ProgrammingLanguages-Main",
-  "name": "Rustc",
+  "name": "Rust",
   "version": "1.71.1",
   "architectures": ["x86_64"],
   "description": "Language empowering everyone to build reliable and efficient software",
