@@ -3,16 +3,14 @@ class Target < ISM::Software
     def prepare
         super
 
-        llvmTargetPatch = "}\nSome(s) if &s == \"#{Ism.settings.systemTarget}\" => {\n\tTargetTriple::from_triple(\"x86_64-unknown-linux-gnu\")\n}"
-
         fileReplaceTextAtLineNumber(path: "#{buildDirectoryPath}/compiler/rustc_session/src/config.rs",
-                                    text: "}",
-                                    newText: llvmTargetPatch,
-                                    lineNumber: 1991)
+                                    text: "CUSTOM_TARGET",
+                                    newText: Ism.settings.systemTarget,
+                                    lineNumber: 1992)
 
         fileReplaceTextAtLineNumber(path: "#{buildDirectoryPath}/compiler/rustc_target/src/spec/x86_64_unknown_linux_gnu.rs",
-                                    text: "llvm_target: \"x86_64-unknown-linux-gnu\".into(),",
-                                    newText: "llvm_target: \"#{Ism.settings.systemTarget}\".into(),",
+                                    text: "CUSTOM_TARGET",
+                                    newText: Ism.settings.systemTarget,
                                     lineNumber: 18)
 
         configData = <<-CODE
