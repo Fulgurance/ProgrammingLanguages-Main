@@ -86,9 +86,6 @@ class Target < ISM::Software
 
         [target.#{Ism.settings.systemTarget}]
         llvm-config = "/usr/bin/llvm-config"
-
-        [target.x86_64-unknown-linux-gnu]
-        llvm-config = "/usr/bin/llvm-config"
         CODE
         fileWriteData("#{buildDirectoryPath}/config.toml",configData)
     end
@@ -96,7 +93,7 @@ class Target < ISM::Software
     def build
         super
 
-        runPythonCommand(   arguments:      "./x.py build --host #{Ism.settings.systemTarget} --target x86_64-unknown-linux-gnu,#{buildDirectoryPath}/#{Ism.settings.systemTarget}.json",
+        runPythonCommand(   arguments:      "./x.py build --host #{Ism.settings.systemTarget} --target #{buildDirectoryPath}/#{Ism.settings.systemTarget}.json",
                             path:           buildDirectoryPath,
                             environment:    {"LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
     end
@@ -104,7 +101,7 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        runPythonCommand(   arguments:      "./x.py install --host #{Ism.settings.systemTarget} --target x86_64-unknown-linux-gnu,#{buildDirectoryPath}/#{Ism.settings.systemTarget}.json",
+        runPythonCommand(   arguments:      "./x.py install --host #{Ism.settings.systemTarget} --target #{buildDirectoryPath}/#{Ism.settings.systemTarget}.json",
                             path:           buildDirectoryPath,
                             environment:    {   "DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}",
                                                 "LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
