@@ -3,13 +3,6 @@ class Target < ISM::Software
     def prepare
         super
 
-        copyFile(   "#{buildDirectoryPath}/compiler/rustc_target/src/spec/x86_64_unknown_linux_gnu.rs",
-                    "#{buildDirectoryPath}/compiler/rustc_target/src/spec/#{Ism.settings.systemTarget.gsub("-","_")}.rs")
-
-        fileReplaceText(path: "#{buildDirectoryPath}/compiler/rustc_target/src/spec/#{Ism.settings.systemTarget.gsub("-","_")}.rs",
-                        text: "x86_64-unknown-linux-gnu",
-                        newText: "#{Ism.settings.systemTarget}")
-
         configData = <<-CODE
         changelog-seen = 2
 
