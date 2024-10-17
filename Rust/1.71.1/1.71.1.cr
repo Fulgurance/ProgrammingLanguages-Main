@@ -21,7 +21,6 @@ class Target < ISM::Software
         link-shared = true
 
         [build]
-        target = ["#{Ism.settings.systemTarget}"]
         docs = false
         extended = true
         locked-deps = true
@@ -35,7 +34,7 @@ class Target < ISM::Software
         [rust]
         channel = "stable"
 
-        [target.#{Ism.settings.systemTarget}]
+        [target.x86_64-unknown-linux-gnu]
         llvm-config = "/usr/bin/llvm-config"
         CODE
         fileWriteData("#{buildDirectoryPath}/config.toml",configData)
