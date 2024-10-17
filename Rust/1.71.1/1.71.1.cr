@@ -3,15 +3,12 @@ class Target < ISM::Software
     def prepare
         super
 
-        fileReplaceTextAtLineNumber(path: "#{buildDirectoryPath}/compiler/rustc_session/src/config.rs",
-                                    text: "CUSTOM_TARGET",
-                                    newText: Ism.settings.systemTarget,
-                                    lineNumber: 1992)
+        copyFile(   "#{buildDirectoryPath}/compiler/rustc_target/src/spec/x86_64_unknown_linux_gnu.rs",
+                    "#{buildDirectoryPath}/compiler/rustc_target/src/spec/#{Ism.settings.systemTarget.gsub("-","_")}.rs")
 
-        fileReplaceTextAtLineNumber(path: "#{buildDirectoryPath}/compiler/rustc_target/src/spec/x86_64_unknown_linux_gnu.rs",
-                                    text: "CUSTOM_TARGET",
-                                    newText: Ism.settings.systemTarget,
-                                    lineNumber: 18)
+        fileReplaceText(path: "#{buildDirectoryPath}/compiler/rustc_target/src/spec/#{Ism.settings.systemTarget.gsub("-","_")}.rs",
+                        text: "x86_64-unknown-linux-gnu",
+                        newText: "#{Ism.settings.systemTarget}")
 
         configData = <<-CODE
         changelog-seen = 2
@@ -21,6 +18,7 @@ class Target < ISM::Software
         link-shared = true
 
         [build]
+        target = ["#{Ism.settings.systemTarget}"]
         docs = false
         extended = true
         locked-deps = true
@@ -34,7 +32,7 @@ class Target < ISM::Software
         [rust]
         channel = "stable"
 
-        [target.x86_64-unknown-linux-gnu]
+        [target.#{Ism.settings.systemTarget}]
         llvm-config = "/usr/bin/llvm-config"
         CODE
         fileWriteData("#{buildDirectoryPath}/config.toml",configData)
