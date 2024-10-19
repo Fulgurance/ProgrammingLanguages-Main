@@ -20,7 +20,7 @@ class Target < ISM::Software
 
         [install]
         prefix = "/usr"
-        docdir = "share/doc/rustc-1.71.1"
+        docdir = "share/doc/rustc-1.82.0"
 
         [rust]
         channel = "stable"
