@@ -24,6 +24,8 @@ class Target < ISM::Software
 
         [rust]
         channel = "stable"
+        lto = "thin"
+        codegen-units = 1
 
         [target.#{Ism.settings.systemTarget}]
         llvm-config = "/usr/bin/llvm-config"
@@ -36,16 +38,18 @@ class Target < ISM::Software
 
         runPythonCommand(   arguments:      "./x.py build",
                             path:           buildDirectoryPath,
-                            environment:    {"LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
+                            environment:    {   "LIBSSH2_SYS_USE_PKG_CONFIG" => "1",
+                                                "LIBSQLITE3_SYS_USE_PKG_CONFIG" => "1"})
     end
 
     def prepareInstallation
         super
 
-        runPythonCommand(   arguments:      "./x.py install",
+        runPythonCommand(   arguments:      "./x.py install rustc std",
                             path:           buildDirectoryPath,
                             environment:    {   "DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}",
-                                                "LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
+                                                "LIBSSH2_SYS_USE_PKG_CONFIG" => "1",
+                                                "LIBSQLITE3_SYS_USE_PKG_CONFIG" => "1"})
 
         deleteAllFilesRecursivelyFinishing( path:       "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}",
                                             extensions: ["old"])
