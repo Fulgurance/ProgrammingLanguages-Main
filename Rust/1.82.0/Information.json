@@ -1,0 +1,58 @@
+{
+  "port": "ProgrammingLanguages-Main",
+  "name": "Rust",
+  "version": "1.82.0",
+  "architectures": ["x86_64"],
+  "description": "Language empowering everyone to build reliable and efficient software",
+  "website": "https://www.rust-lang.org/",
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "port": "NetworkingLibraries-Main",
+      "name": "Curl",
+      "version": ">=8.2.1",
+      "options": []
+    },
+    {
+      "port": "ProgrammingTools-Main",
+      "name": "Cmake",
+      "version": ">=3.27.2",
+      "options": []
+    }
+  ],
+  "kernelDependencies": [],
+  "options": [
+    {
+      "name": "Libssh2",
+      "description": "Enable libssh2 support",
+      "active": false,
+      "dependencies": [
+        {
+          "port": "BaseLibraries-Main",
+          "name": "Libssh2",
+          "version": ">=1.11.0",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
+      "name": "Llvm",
+      "description": "Enable llvm support",
+      "active": false,
+      "dependencies": [
+        {
+          "port": "ProgrammingLanguages-Main",
+          "name": "Llvm",
+          "version": ">=16.0.5",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    }
+  ],
+  "uniqueDependencies": [],
+  "uniqueOptions": [],
+  "selectedDependencies": [],
+  "allowCodependencies": []
+}
