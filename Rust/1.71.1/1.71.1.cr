@@ -34,7 +34,7 @@ class Target < ISM::Software
     def build
         super
 
-        runPythonCommand(   arguments:      "./x.py build",
+        runPythonCommand(   arguments:      "./x.py build library/std --stage 0",
                             path:           buildDirectoryPath,
                             environment:    {"LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
     end
@@ -42,7 +42,7 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        runPythonCommand(   arguments:      "./x.py install",
+        runPythonCommand(   arguments:      "./x.py install rustc std cargo",
                             path:           buildDirectoryPath,
                             environment:    {   "DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}",
                                                 "LIBSSH2_SYS_USE_PKG_CONFIG" => "1"})
