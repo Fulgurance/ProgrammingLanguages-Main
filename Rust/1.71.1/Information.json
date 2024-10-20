@@ -18,6 +18,12 @@
       "name": "Cmake",
       "version": ">=3.27.2",
       "options": []
+    },
+    {
+      "port": "ProgrammingLanguages-Main",
+      "name": "Llvm",
+      "version": ">=16.0.5",
+      "options": []
     }
   ],
   "kernelDependencies": [],
@@ -31,20 +37,6 @@
           "port": "BaseLibraries-Main",
           "name": "Libssh2",
           "version": ">=1.11.0",
-          "options": []
-        }
-      ],
-      "kernelDependencies": []
-    },
-    {
-      "name": "Llvm",
-      "description": "Enable llvm support",
-      "active": false,
-      "dependencies": [
-        {
-          "port": "ProgrammingLanguages-Main",
-          "name": "Llvm",
-          "version": ">=16.0.5",
           "options": []
         }
       ],
