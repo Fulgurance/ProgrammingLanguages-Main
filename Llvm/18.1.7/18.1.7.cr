@@ -52,6 +52,12 @@ class Target < ISM::Software
 
         copyFile(   "#{buildDirectoryPath}/bin/FileCheck",
                     "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin/FileCheck")
+
+        if option("Clang")
+            makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/clang")
+            fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/clang/clang.cfg","-fstack-protector-strong")
+            fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/clang/clang++.cfg","-fstack-protector-strong")
+        end
     end
 
 end
