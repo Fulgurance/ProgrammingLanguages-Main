@@ -34,6 +34,10 @@ class Target < ISM::Software
             makeLink(   target: "python3",
                         path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/python",
                         type:   :symbolicLink)
+
+            makeLink(   target: "pip3",
+                        path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/pip",
+                        type:   :symbolicLink)
         end
     end
 
