@@ -18,7 +18,7 @@ class Target < ISM::Software
     def configure
         super
 
-        runCmakeCommand(arguments:      "-DCMAKE_INSTALL_PREFIX=/usr                    \
+        runCmakeCommand(arguments:      "-DCMAKE_INSTALL_PREFIX=usr/llvm/18             \
                                         -DLLVM_HOST_TRIPLE=#{Ism.settings.systemTarget} \
                                         -DLLVM_ENABLE_FFI=ON                            \
                                         -DCMAKE_BUILD_TYPE=Release                      \
