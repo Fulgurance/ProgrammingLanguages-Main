@@ -78,7 +78,6 @@ class Target < ISM::Software
         channel = "stable"
 
         [target.#{Ism.settings.systemTarget}]
-        llvm-config = "/usr/bin/llvm-config"
         CODE
         fileWriteData("#{buildDirectoryPath}/config.toml",configData)
     end
