@@ -1,0 +1,38 @@
+{
+  "port": "ProgrammingLanguages-Main",
+  "name": "Llvm",
+  "version": "18.1.8",
+  "architectures": ["x86_64"],
+  "description": "Collection of modular and reusable compiler and toolchain technologies",
+  "website": "https://github.com/llvm/llvm-project",
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "port": "ProgrammingTools-Main",
+      "name": "Cmake",
+      "version": ">=3.27.2",
+      "options": []
+    }
+  ],
+  "kernelDependencies": [],
+  "options": [
+    {
+      "name": "Clang",
+      "description": "Enable clang support",
+      "active": true,
+      "dependencies": [],
+      "kernelDependencies": []
+    },
+    {
+      "name": "Compiler-Rt",
+      "description": "Enable compiler-rt support",
+      "active": false,
+      "dependencies": [],
+      "kernelDependencies": []
+    }
+  ],
+  "uniqueDependencies": [],
+  "uniqueOptions": [],
+  "selectedDependencies": [],
+  "allowCodependencies": []
+}
