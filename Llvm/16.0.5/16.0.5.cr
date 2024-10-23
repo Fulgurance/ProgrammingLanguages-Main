@@ -52,17 +52,19 @@ class Target < ISM::Software
         copyFile(   "#{buildDirectoryPath}/bin/FileCheck",
                     "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin/FileCheck")
 
-        if File.exists?("#{Ism.settings.rootPath}etc/profile.d/llvm.sh")
+        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/profile.d/")
+
+        if File.exists?("#{Ism.settings.rootPath}/etc/profile.d/llvm.sh")
             copyFile(   "/etc/profile.d/llvm.sh",
-                        "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/profile.d/llvm.sh")
+                        "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/profile.d/llvm.sh")
         else
-            generateEmptyFile("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/profile.d/llvm.sh")
+            generateEmptyFile("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/profile.d/llvm.sh")
         end
 
         llvmData = <<-CODE
         pathappend /usr/lib/llvm/16/bin PATH
         CODE
-        fileUpdateContent("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/profile.d/llvm.sh",llvmData)
+        fileUpdateContent("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/profile.d/llvm.sh",llvmData)
     end
 
 end
