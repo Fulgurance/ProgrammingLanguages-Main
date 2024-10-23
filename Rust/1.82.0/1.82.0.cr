@@ -89,8 +89,8 @@ class Target < ISM::Software
 
         runPythonCommand(   arguments:      "./x.py build library/std --stage 0",
                             path:           buildDirectoryPath,
-                            environment:    {   "LIBSSH2_SYS_USE_PKG_CONFIG" => "1",
-                                                "LIBSQLITE3_SYS_USE_PKG_CONFIG" => "1"})
+                            environment:    {   "LIBSSH2_SYS_USE_PKG_CONFIG" => "#{option("Libssh2") ? "1" : "0"}",
+                                                "LIBSQLITE3_SYS_USE_PKG_CONFIG" => "#{option("Sqlite") ? "1" : "0"}"})
     end
 
     def prepareInstallation
@@ -99,8 +99,8 @@ class Target < ISM::Software
         runPythonCommand(   arguments:      "./x.py install rustc std cargo",
                             path:           buildDirectoryPath,
                             environment:    {   "DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}",
-                                                "LIBSSH2_SYS_USE_PKG_CONFIG" => "1",
-                                                "LIBSQLITE3_SYS_USE_PKG_CONFIG" => "1"})
+                                                "LIBSSH2_SYS_USE_PKG_CONFIG" => "#{option("Libssh2") ? "1" : "0"}",
+                                                "LIBSQLITE3_SYS_USE_PKG_CONFIG" => "#{option("Sqlite") ? "1" : "0"}"})
 
         deleteAllFilesRecursivelyFinishing( path:       "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}",
                                             extensions: ["old"])

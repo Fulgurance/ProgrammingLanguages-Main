@@ -41,6 +41,20 @@
         }
       ],
       "kernelDependencies": []
+    },
+    {
+      "name": "Sqlite",
+      "description": "Enable sqlite support",
+      "active": false,
+      "dependencies": [
+        {
+          "port": "DatabaseLibraries-Main",
+          "name": "Sqlite",
+          "version": ">=3.42.0",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
     }
   ],
   "uniqueDependencies": [],
