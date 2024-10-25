@@ -58,20 +58,6 @@ class Target < ISM::Software
             fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/clang/clang.cfg","-fstack-protector-strong")
             fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/clang/clang++.cfg","-fstack-protector-strong")
         end
-
-        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/profile.d/")
-
-        if File.exists?("#{Ism.settings.rootPath}/etc/profile.d/llvm.sh")
-            copyFile(   "/etc/profile.d/llvm.sh",
-                        "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/profile.d/llvm.sh")
-        else
-            generateEmptyFile("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/profile.d/llvm.sh")
-        end
-
-        llvmData = <<-CODE
-        pathappend /usr/lib/llvm/18/bin PATH
-        CODE
-        fileUpdateContent("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/profile.d/llvm.sh",llvmData)
     end
 
 end

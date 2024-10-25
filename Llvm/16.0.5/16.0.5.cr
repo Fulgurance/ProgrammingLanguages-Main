@@ -25,7 +25,7 @@ class Target < ISM::Software
                                         -DLLVM_BUILD_LLVM_DYLIB=ON                      \
                                         -DLLVM_LINK_LLVM_DYLIB=ON                       \
                                         -DLLVM_ENABLE_RTTI=ON                           \
-                                        -DLLVM_TARGETS_TO_BUILD=\"host;BPF\"     \
+                                        -DLLVM_TARGETS_TO_BUILD=\"host;BPF\"            \
                                         -DLLVM_BINUTILS_INCDIR=/usr/include             \
                                         -DLLVM_INCLUDE_BENCHMARKS=OFF                   \
                                         -DCLANG_DEFAULT_PIE_ON_LINUX=ON                 \
@@ -51,20 +51,6 @@ class Target < ISM::Software
 
         copyFile(   "#{buildDirectoryPath}/bin/FileCheck",
                     "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin/FileCheck")
-
-        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/profile.d/")
-
-        if File.exists?("#{Ism.settings.rootPath}/etc/profile.d/llvm.sh")
-            copyFile(   "/etc/profile.d/llvm.sh",
-                        "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/profile.d/llvm.sh")
-        else
-            generateEmptyFile("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/profile.d/llvm.sh")
-        end
-
-        llvmData = <<-CODE
-        pathappend /usr/lib/llvm/16/bin PATH
-        CODE
-        fileUpdateContent("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/profile.d/llvm.sh",llvmData)
     end
 
 end
