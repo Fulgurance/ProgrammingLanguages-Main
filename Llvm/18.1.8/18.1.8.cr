@@ -73,7 +73,7 @@ class Target < ISM::Software
 
                     makeLink(   target: "#{targetPath}",
                                 path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/#{fileName}",
-                                type:   :symbolicLink)
+                                type:   :symbolicLinkByOverwrite)
                 end
 
             end
