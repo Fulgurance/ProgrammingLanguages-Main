@@ -1,0 +1,88 @@
+{
+  "port": "ProgrammingLanguages-Main",
+  "name": "Python",
+  "version": "3.11.4",
+  "architectures": ["x86_64"],
+  "description": "Programming language that lets you work more quickly and integrate your systems more effectively",
+  "website": "https://www.python.org/",
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "port": "SystemBase-Main",
+      "name": "SystemBase",
+      "version": ">=0.2.0",
+      "options": ["Pass3"]
+    },
+    {
+      "port": "Xml-Main",
+      "name": "Expat",
+      "version": ">=2.5.0",
+      "options": []
+    },
+    {
+      "port": "BaseLibraries-Main",
+      "name": "Gdbm",
+      "version": ">=1.23.0",
+      "options": []
+    },
+    {
+      "port": "BaseLibraries-Main",
+      "name": "Libffi",
+      "version": ">=3.4.4",
+      "options": []
+    },
+    {
+      "port": "Security-Main",
+      "name": "Openssl",
+      "version": ">=3.1.2",
+      "options": []
+    },
+    {
+      "port": "Archivers-Main",
+      "name": "Bzip2",
+      "version": ">=1.0.8",
+      "options": []
+    },
+    {
+      "port": "BaseLibraries-Main",
+      "name": "Zlib",
+      "version": ">=1.2.13",
+      "options": []
+    }
+  ],
+  "kernelDependencies": [],
+  "options": [
+    {
+      "name": "Pass1",
+      "description": "Enable the phase 1 of the cross toolchain building",
+      "active": false,
+      "dependencies": [
+        {
+          "port": "ProgrammingLanguages-Main",
+          "name": "Perl",
+          "version": ">=5.38.0",
+          "options": ["Pass1"]
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
+      "name": "Sqlite",
+      "description": "Enable sqlite support",
+      "active": false,
+      "dependencies": [
+        {
+          "port": "DatabaseLibraries-Main",
+          "name": "Sqlite",
+          "version": ">=3.42.0",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    }
+  ],
+  "uniqueDependencies": [],
+  "uniqueOptions": [],
+  "selectedDependencies": [],
+  "allowCodependencies": []
+}

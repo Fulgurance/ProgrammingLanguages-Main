@@ -1,13 +1,13 @@
 class Target < ISM::Software
-    
+
     def build
         super
 
         makeSource( path:           buildDirectoryPath,
-                    environment:    {   "PATH" => "#{workDirectoryPath}/Crystal-Compiler-1.13.1/bin:$PATH",
+                    environment:    {   "PATH" => "#{workDirectoryPath}/Crystal-Compiler-#{version}/bin:$PATH",
                                         "LLVM_DIR" => "/usr/lib/llvm/#{softwareMajorVersion("@ProgrammingLanguages-Main:Llvm")}/"})
     end
-    
+
     def prepareInstallation
         super
 

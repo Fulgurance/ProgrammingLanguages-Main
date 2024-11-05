@@ -1,5 +1,5 @@
 class Target < ISM::Software
-
+    
     def configure
         super
 
@@ -38,7 +38,7 @@ class Target < ISM::Software
                     environment:    {"BUILD_ZLIB" => "False","BUILD_BZIP2" => "0"})
         end
     end
-
+    
     def build
         super
 
@@ -49,7 +49,7 @@ class Target < ISM::Software
                         environment:    {"BUILD_ZLIB" => "False","BUILD_BZIP2" => "0"})
         end
     end
-
+    
     def prepareInstallation
         super
 
