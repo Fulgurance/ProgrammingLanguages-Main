@@ -1,7 +1,7 @@
 {
   "port": "ProgrammingLanguages-Main",
   "name": "Python",
-  "version": "3.11.4",
+  "version": "3.13.0",
   "architectures": ["x86_64"],
   "description": "Programming language that lets you work more quickly and integrate your systems more effectively",
   "website": "https://www.python.org/",
