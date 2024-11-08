@@ -39,6 +39,11 @@ class Target < ISM::Software
                         path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/pip",
                         type:   :symbolicLink)
         end
+
+        pythonData = <<-CODE
+        pathappend /usr/lib/python3.11/site-packages PYTHONPATH
+        CODE
+        fileUpdateContent("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/profile.d/python.sh",pythonData)
     end
 
 end
