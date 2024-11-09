@@ -51,6 +51,13 @@ class Target < ISM::Software
 
         copyFile(   "#{buildDirectoryPath}/bin/FileCheck",
                     "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin/FileCheck")
+
+        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/ld.so.conf.d")
+
+        ldsoData = <<-CODE
+        include /usr/lib/llvm/#{majorVersion}/lib
+        CODE
+        fileWriteData("#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}etc/ld.so.conf.d/llvm.conf",ldsoData)
     end
 
 end

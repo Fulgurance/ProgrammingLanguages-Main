@@ -53,6 +53,13 @@ class Target < ISM::Software
         copyFile(   "#{buildDirectoryPath}/bin/FileCheck",
                     "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin/FileCheck")
 
+        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/ld.so.conf.d")
+
+        ldsoData = <<-CODE
+        include /usr/lib/llvm/#{majorVersion}/lib
+        CODE
+        fileWriteData("#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}etc/ld.so.conf.d/llvm.conf",ldsoData)
+
         if option("Clang")
             makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/clang")
             fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/clang/clang.cfg","-fstack-protector-strong")
