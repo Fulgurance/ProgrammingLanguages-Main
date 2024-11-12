@@ -11,7 +11,8 @@ class Target < ISM::Software
         super
 
         makeSource( arguments:  "PREFIX=/usr DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath} install",
-                    path:       buildDirectoryPath)
+                    path:       buildDirectoryPath,
+                    environment:    {   "PATH" => "#{workDirectoryPath}/Crystal-Compiler-#{version}/bin:/usr/lib/llvm/#{softwareMajorVersion("@ProgrammingLanguages-Main:Llvm")}/bin:$PATH"})
     end
 
 end
