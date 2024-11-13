@@ -66,25 +66,20 @@ class Target < ISM::Software
             fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/clang/clang++.cfg","-fstack-protector-strong")
         end
 
-        #EXPERIMENTAL: if this installation is the greatest version, we symlink all to the proper directory
+        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin")
+
         if isGreatestVersion
-            Dir.glob(["#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib/llvm/#{majorVersion}/**/*"], match: :dot_files).each do |directoryPath|
+            Dir.glob(["#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib/llvm/18/bin/**/*"], match: :dot_files).each do |filePath|
 
-                directoryName = directoryPath.lchop(directoryPath[0..directoryPath.rindex("/")])
-                makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/#{directoryName}")
+                fileName = filePath.lchop(directoryPath[0..filePath.rindex("/")])
 
-                Dir.glob(["#{directoryPath}/**/*"], match: :dot_files).each do |filePath|
-
-                    fileName = filePath.lchop(filePath[0..filePath.rindex("/")])
-                    targetPath = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib/llvm/#{majorVersion}/#{directoryName}/fileName"
-
-                    makeLink(   target: "#{targetPath}",
-                                path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/#{fileName}",
-                                type:   :symbolicLinkByOverwrite)
-                end
+                makeLink(   target: "/usr/lib/llvm/18/bin/#{fileName}",
+                            path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin/#{fileName}",
+                            type:   :symbolicLinkByOverwrite)
 
             end
         end
+
     end
 
 end

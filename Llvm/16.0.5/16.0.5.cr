@@ -58,6 +58,19 @@ class Target < ISM::Software
         include /usr/lib/llvm/#{majorVersion}/lib
         CODE
         fileWriteData("#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}etc/ld.so.conf.d/llvm.conf",ldsoData)
+
+        if isGreatestVersion
+            Dir.glob(["#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib/llvm/18/bin/**/*"], match: :dot_files).each do |filePath|
+
+                fileName = filePath.lchop(directoryPath[0..filePath.rindex("/")])
+
+                makeLink(   target: "/usr/lib/llvm/18/bin/#{fileName}",
+                            path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin/#{fileName}",
+                            type:   :symbolicLinkByOverwrite)
+
+            end
+        end
+
     end
 
 end
