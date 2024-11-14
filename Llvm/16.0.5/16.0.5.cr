@@ -62,7 +62,7 @@ class Target < ISM::Software
         if isGreatestVersion
             Dir.glob(["#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib/llvm/18/bin/**/*"], match: :dot_files).each do |filePath|
 
-                fileName = filePath.lchop(directoryPath[0..filePath.rindex("/")])
+                fileName = filePath.lchop(filePath[0..filePath.rindex("/")])
 
                 makeLink(   target: "/usr/lib/llvm/18/bin/#{fileName}",
                             path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin/#{fileName}",
