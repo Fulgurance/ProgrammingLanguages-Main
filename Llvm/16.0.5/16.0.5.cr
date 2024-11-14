@@ -60,7 +60,7 @@ class Target < ISM::Software
         fileWriteData("#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}etc/ld.so.conf.d/llvm.conf",ldsoData)
 
         if isGreatestVersion
-            directoryContent(["#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib/llvm/18/bin/**/*"], match: :dot_files).each do |filePath|
+            directoryContent("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib/llvm/18/bin/**/*", match: :dot_files).each do |filePath|
 
                 fileName = filePath.lchop(filePath[0..filePath.rindex("/")])
 
