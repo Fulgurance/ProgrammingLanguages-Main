@@ -30,7 +30,7 @@ class Target < ISM::Software
         makeSource( arguments:  "DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath} install",
                     path:       buildDirectoryPath)
 
-        if !option("Pass1")
+        if !option("Pass1") && isGreatestVersion
             makeLink(   target: "python#{majorVersion}",
                         path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/python",
                         type:   :symbolicLink)

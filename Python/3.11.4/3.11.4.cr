@@ -30,7 +30,7 @@ class Target < ISM::Software
         makeSource( arguments:  "DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath} install",
                     path:       buildDirectoryPath)
 
-        if !option("Pass1")
+        if !option("Pass1") && isGreatestVersion
             makeLink(   target: "python#{majorVersion}",
                         path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/python",
                         type:   :symbolicLink)
@@ -38,6 +38,15 @@ class Target < ISM::Software
             makeLink(   target: "pip#{majorVersion}",
                         path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/pip",
                         type:   :symbolicLink)
+        end
+
+        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/profile.d")
+
+        if File.exists?("#{Ism.settings.rootPath}etc/profile.d/python.sh")
+            copyFile(   "/etc/profile.d/python.sh",
+                        "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/profile.d/python.sh")
+        else
+            generateEmptyFile("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/profile.d/python.sh")
         end
 
         pythonData = <<-CODE
