@@ -50,7 +50,7 @@ class Target < ISM::Software
         end
 
         pythonData = <<-CODE
-        pathappend /usr/lib/python3.13/site-packages PYTHONPATH
+        pathappend /usr/lib/python#{majorVersion}.#{minorVersion}/site-packages PYTHONPATH
         CODE
         fileUpdateContent("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/profile.d/python.sh",pythonData)
     end
