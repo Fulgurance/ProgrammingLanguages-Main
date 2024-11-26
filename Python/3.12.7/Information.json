@@ -32,7 +32,7 @@
       "options": []
     },
     {
-      "port": "Security-Main",
+      "port": "SecuritySoftwares-Main",
       "name": "Openssl",
       "version": ">=3.1.2",
       "options": []
