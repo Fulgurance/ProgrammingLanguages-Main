@@ -1,7 +1,7 @@
 {
   "port": "ProgrammingLanguages-Main",
   "name": "Vala",
-  "version": "0.9.8",
+  "version": "0.56.17",
   "architectures": ["x86_64"],
   "description": "Programming language using modern high level abstractions without imposing additional runtime requirements and without using a different ABI",
   "website": "https://wiki.gnome.org/Projects/Vala",
