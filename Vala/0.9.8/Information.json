@@ -1,0 +1,23 @@
+{
+  "port": "ProgrammingLanguages-Main",
+  "name": "Vala",
+  "version": "0.9.8",
+  "architectures": ["x86_64"],
+  "description": "Programming language using modern high level abstractions without imposing additional runtime requirements and without using a different ABI",
+  "website": "https://wiki.gnome.org/Projects/Vala",
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "port": "BaseLibraries-Main",
+      "name": "Glib",
+      "version": ">=2.76.4",
+      "options": []
+    }
+  ],
+  "kernelDependencies": [],
+  "options": [],
+  "uniqueDependencies": [],
+  "uniqueOptions": [],
+  "selectedDependencies": [],
+  "allowCodependencies": []
+}
