@@ -12,6 +12,12 @@
       "name": "Glib",
       "version": ">=2.76.4",
       "options": []
+    },
+    {
+      "port": "GraphicsLibraries-Main",
+      "name": "Graphviz",
+      "version": ">=12.2.0",
+      "options": []
     }
   ],
   "kernelDependencies": [],
