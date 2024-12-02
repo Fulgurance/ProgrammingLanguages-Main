@@ -53,13 +53,6 @@ class Target < ISM::Software
         copyFile(   "#{buildDirectoryPath}/bin/FileCheck",
                     "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin/FileCheck")
 
-        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/ld.so.conf.d")
-
-        ldsoData = <<-CODE
-        /usr/lib/llvm/#{majorVersion}/lib
-        CODE
-        fileWriteData("#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}etc/ld.so.conf.d/llvm.conf",ldsoData)
-
         if option("Clang")
             makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/clang")
             fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/clang/clang.cfg","-fstack-protector-strong")
@@ -69,6 +62,13 @@ class Target < ISM::Software
         makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin")
 
         if isGreatestVersion
+            makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/ld.so.conf.d")
+
+            ldsoData = <<-CODE
+            /usr/lib/llvm/#{majorVersion}/lib
+            CODE
+            fileWriteData("#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}etc/ld.so.conf.d/llvm.conf",ldsoData)
+
             directoryContent("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib/llvm/18/bin", matchHidden: true).each do |filePath|
 
                 fileName = filePath.lchop(filePath[0..filePath.rindex("/")])

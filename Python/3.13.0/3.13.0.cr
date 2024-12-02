@@ -40,12 +40,14 @@ class Target < ISM::Software
                         type:   :symbolicLink)
         end
 
-        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/profile.d")
+        if isGreatestVersion
+            makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/profile.d")
 
-        pythonData = <<-CODE
-        pathappend /usr/lib/python#{majorVersion}.#{minorVersion}/site-packages PYTHONPATH
-        CODE
-        fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/profile.d/python.sh",pythonData)
+            pythonData = <<-CODE
+            pathappend /usr/lib/python#{majorVersion}.#{minorVersion}/site-packages PYTHONPATH
+            CODE
+            fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/profile.d/python.sh",pythonData)
+        end
     end
 
 end
