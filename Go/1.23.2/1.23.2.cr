@@ -9,7 +9,7 @@ class Target < ISM::Software
     def configure
         super
 
-        runFile(file:       "src/all.bash",
+        runFile(file:       "all.bash",
                 path:       buildDirectoryPath)
     end
     
