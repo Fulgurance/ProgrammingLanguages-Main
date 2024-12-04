@@ -14,6 +14,7 @@ class Target < ISM::Software
                 environment:    {   "GOARCH" => "amd64",
                                     "GOAMD64" => "v1",
                                     "GOROOT_FINAL" => "/usr/lib/go",
+                                    "GOTOOLCHAIN" => "local",
                                     "PATH" => "#{workDirectoryPath}/Go-Compiler-#{version}/bin:$PATH"})
     end
     
