@@ -9,7 +9,7 @@ class Target < ISM::Software
     def build
         super
 
-        runFile(file:       "all.bash",
+        runFile(file:       "make.bash",
                 path:       buildDirectoryPath,
                 environment:    {   "GOARCH" => "amd64",
                                     "GOAMD64" => "v1",
