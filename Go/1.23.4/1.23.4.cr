@@ -21,10 +21,10 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        moveFile(   path:       "#{mainDirectoryPath}/bin",
+        moveFile(   path:       "#{workDirectoryPath}/bin",
                     newPath:    "#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}/bin")
 
-        moveFile(   path:       "#{mainDirectoryPath}/lib",
+        moveFile(   path:       "#{workDirectoryPath}/lib",
                     newPath:    "#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}/lib")
     end
 
