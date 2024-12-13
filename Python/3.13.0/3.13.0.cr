@@ -12,7 +12,6 @@ class Target < ISM::Software
             configureSource(arguments:  "--prefix=/usr      \
                                         --enable-shared     \
                                         --with-system-expat \
-                                        --with-system-ffi   \
                                         --enable-optimizations",
                             path:       buildDirectoryPath)
         end
