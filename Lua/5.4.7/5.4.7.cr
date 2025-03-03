@@ -52,10 +52,4 @@ class Target < ISM::Software
                     "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib/pkgconfig/lua.pc")
     end
 
-    def install
-        super
-
-        runChmodCommand("644 /usr/lib/pkgconfig/lua.pc")
-    end
-
 end
