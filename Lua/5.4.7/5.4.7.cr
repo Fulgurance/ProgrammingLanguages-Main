@@ -39,9 +39,9 @@ class Target < ISM::Software
         super
 
         makeSource( arguments:  "DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath} \
-                                INSTALL_TOP=/usr \
+                                INSTALL_TOP=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr \
                                 INSTALL_DATA=\"cp -d\" \
-                                INSTALL_MAN=/usr/share/man/man1 \
+                                INSTALL_MAN=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/share/man/man1 \
                                 TO_LIB=\"liblua.so liblua.so.5.4 liblua.so.5.4.7\" \
                                 install",
                     path:       buildDirectoryPath)
