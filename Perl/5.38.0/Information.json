@@ -11,7 +11,7 @@
       "port": "SystemBase-Main",
       "name": "SystemBase",
       "version": ">=0.2.0",
-      "options": ["Pass3"]
+      "options": ["Pass2"]
     },
     {
       "port": "BaseLibraries-Main",
