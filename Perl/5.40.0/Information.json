@@ -20,12 +20,6 @@
       "options": []
     },
     {
-      "port": "Utilities-Main",
-      "name": "Groff",
-      "version": ">=1.23.0",
-      "options": []
-    },
-    {
       "port": "BaseLibraries-Main",
       "name": "Zlib",
       "version": ">=1.2.13",
