@@ -9,9 +9,12 @@ class Target < ISM::Software
                                         --without-ensurepip",
                             path:       buildDirectoryPath)
         else
-            configureSource(arguments:  "--prefix=/usr      \
-                                        --enable-shared     \
-                                        --with-system-expat \
+            configureSource(arguments:  "--prefix=/usr                          \
+                                        --host=#{Ism.settings.systemTarget}     \
+                                        --build=#{Ism.settings.systemTarget}    \
+                                        --target=#{Ism.settings.systemTarget}   \
+                                        --enable-shared                         \
+                                        --with-system-expat                     \
                                         --enable-optimizations",
                             path:       buildDirectoryPath)
         end
