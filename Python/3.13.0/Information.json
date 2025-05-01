@@ -8,12 +8,6 @@
   "installedFiles": [],
   "dependencies": [
     {
-      "port": "SystemBase-Main",
-      "name": "SystemBase",
-      "version": ">=0.2.0",
-      "options": ["Pass2"]
-    },
-    {
       "port": "Xml-Main",
       "name": "Expat",
       "version": ">=2.5.0",
