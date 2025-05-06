@@ -8,10 +8,58 @@
   "installedFiles": [],
   "dependencies": [
     {
-      "port": "SystemBase-Main",
-      "name": "SystemBase",
-      "version": ">=0.2.0",
-      "options": ["Pass2"]
+      "port": "SecurityLibraries-Main",
+      "name": "Libxcrypt",
+      "version": ">=4.4.36",
+      "options": []
+    },
+    {
+      "port": "Shells-Main",
+      "name": "Bash",
+      "version": ">=5.2.37",
+      "options": []
+    },
+    {
+      "port": "ProgrammingTools-Main",
+      "name": "Binutils",
+      "version": ">=2.43.0",
+      "options": []
+    },
+    {
+      "port": "ProgrammingTools-Main",
+      "name": "Gcc",
+      "version": ">=14.2.0",
+      "options": []
+    },
+    {
+      "port": "ProgrammingTools-Main",
+      "name": "Glibc",
+      "version": ">=2.40.0",
+      "options": []
+    },
+    {
+      "port": "Utilities-Main",
+      "name": "Coreutils",
+      "version": ">=9.3.0",
+      "options": []
+    },
+    {
+      "port": "Utilities-Main",
+      "name": "Gawk",
+      "version": ">=5.3.1",
+      "options": []
+    },
+    {
+      "port": "Utilities-Main",
+      "name": "Grep",
+      "version": ">=3.11.0",
+      "options": []
+    },
+    {
+      "port": "Utilities-Main",
+      "name": "Sed",
+      "version": ">=4.9.0",
+      "options": []
     },
     {
       "port": "BaseLibraries-Main",
