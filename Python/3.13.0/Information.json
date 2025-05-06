@@ -8,6 +8,66 @@
   "installedFiles": [],
   "dependencies": [
     {
+      "port": "Utilities-Main",
+      "name": "Gettext",
+      "version": ">=0.22.5",
+      "options": []
+    },
+    {
+      "port": "SecurityLibraries-Main",
+      "name": "Libxcrypt",
+      "version": ">=4.4.36",
+      "options": []
+    },
+    {
+      "port": "BaseLibraries-Main",
+      "name": "Ncurses",
+      "version": ">=6.5.0",
+      "options": []
+    },
+    {
+      "port": "Shells-Main",
+      "name": "Bash",
+      "version": ">=5.2.37",
+      "options": []
+    },
+    {
+      "port": "ProgrammingTools-Main",
+      "name": "Binutils",
+      "version": ">=2.43.0",
+      "options": []
+    },
+    {
+      "port": "ProgrammingTools-Main",
+      "name": "Gcc",
+      "version": ">=14.2.0",
+      "options": []
+    },
+    {
+      "port": "ProgrammingTools-Main",
+      "name": "Glibc",
+      "version": ">=2.40.0",
+      "options": []
+    },
+    {
+      "port": "ProgrammingTools-Main",
+      "name": "Pkgconf",
+      "version": ">=2.3.0",
+      "options": []
+    },
+    {
+      "port": "Utilities-Main",
+      "name": "Grep",
+      "version": ">=3.11.0",
+      "options": []
+    },
+    {
+      "port": "Utilities-Main",
+      "name": "Sed",
+      "version": ">=4.9.0",
+      "options": []
+    }
+    {
       "port": "Xml-Main",
       "name": "Expat",
       "version": ">=2.5.0",
