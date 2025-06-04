@@ -52,4 +52,11 @@ class Target < ISM::Software
                     "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib/pkgconfig/lua.pc")
     end
 
+    def deploy
+        super
+
+        runChownCommand("root:root /usr/lib/pkgconfig/lua.pc")
+        runChmodCommand("0644 /usr/lib/pkgconfig/lua.pc")
+    end
+
 end
