@@ -12,7 +12,7 @@ class Target < ISM::Software
             configureSource(arguments:  "--prefix=/usr                          \
                                         --enable-shared                         \
                                         --with-system-expat                     \
-                                        --enable-optimizations",
+                                        #{usingGlibc ? "--enable-optimizations" : ""}",
                             path:       buildDirectoryPath)
         end
     end

@@ -3,6 +3,8 @@ class Target < ISM::Software
     def configure
         super
 
+        usingGlibc = component("C-Library").uniqueDependencyIsEnabled("Glibc")
+
         if option("Pass1")
             configureSource(arguments:  "--prefix=/usr  \
                                         --enable-shared \
@@ -12,7 +14,7 @@ class Target < ISM::Software
             configureSource(arguments:  "--prefix=/usr      \
                                         --enable-shared     \
                                         --with-system-expat \
-                                        --enable-optimizations",
+                                        #{usingGlibc ? "--enable-optimizations" : ""}",
                             path:       buildDirectoryPath)
         end
     end
