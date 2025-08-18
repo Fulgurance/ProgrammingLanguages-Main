@@ -3,6 +3,8 @@ class Target < ISM::Software
     def configure
         super
 
+        usingGlibc = component("C-Library").uniqueDependencyIsEnabled("Glibc")
+
         if option("Pass1")
             configureSource(arguments:  "--prefix=/usr  \
                                         --enable-shared \
