@@ -34,11 +34,15 @@ class Target < ISM::Software
         if !option("Pass1") && isGreatestVersion
             makeLink(   target: "python#{majorVersion}",
                         path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/python",
-                        type:   :symbolicLink)
+                        type:   :symbolicLinkByOverwrite)
+
+            makeLink(   target: "python#{majorVersion}.#{minorVersion}",
+                        path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/python#{majorVersion}",
+                        type:   :symbolicLinkByOverwrite)
 
             makeLink(   target: "pip#{majorVersion}",
                         path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/pip",
-                        type:   :symbolicLink)
+                        type:   :symbolicLinkByOverwrite)
         end
 
         if isGreatestVersion
