@@ -29,6 +29,7 @@ class Target < ISM::Software
         codegen-units = 1
 
         [target.#{Ism.settings.systemTarget}]
+        crt-static = false
         CODE
         fileWriteData("#{buildDirectoryPath}/config.toml",configData)
     end
