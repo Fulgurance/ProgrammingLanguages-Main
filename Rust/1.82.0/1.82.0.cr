@@ -4,13 +4,14 @@ class Target < ISM::Software
         super
 
         configData = <<-CODE
-        change-id = 125535
+        change-id = 129295
 
         [llvm]
         targets = "X86"
         link-shared = true
 
         [build]
+        build = "#{Ism.settings.systemTarget}"
         target = ["#{Ism.settings.systemTarget}"]
         docs = false
         extended = true
