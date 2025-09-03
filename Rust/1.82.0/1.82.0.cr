@@ -3,6 +3,11 @@ class Target < ISM::Software
     def prepare
         super
 
+        architecture = Ism.settings.systemTargetArchitecture
+        os = Ism.settings.systemTargetOs
+        abi = Ism.settings.systemTargetAbi
+        target = "#{architecture}-unknown-#{os}-#{abi}"
+
         configData = <<-CODE
         change-id = 129295
 
@@ -11,8 +16,8 @@ class Target < ISM::Software
         link-shared = true
 
         [build]
-        build = "#{Ism.settings.systemTarget}"
-        target = ["#{Ism.settings.systemTarget}"]
+        build = "#{target}"
+        target = ["#{target}"]
         docs = false
         extended = true
         locked-deps = true
@@ -28,7 +33,7 @@ class Target < ISM::Software
         lto = "thin"
         codegen-units = 1
 
-        [target.#{Ism.settings.systemTarget}]
+        [target.#{target}]
         crt-static = false
         CODE
         fileWriteData("#{buildDirectoryPath}/config.toml",configData)
