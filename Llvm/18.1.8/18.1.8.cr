@@ -44,6 +44,8 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
+        usingGlibc = component("C-Library").uniqueDependencyIsEnabled("Glibc")
+
         makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin")
 
         runNinjaCommand(arguments:      "install",
@@ -62,12 +64,23 @@ class Target < ISM::Software
         makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin")
 
         if isGreatestVersion
-            makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/ld.so.conf.d")
 
-            ldsoData = <<-CODE
-            /usr/lib/llvm/#{majorVersion}/lib
-            CODE
-            fileWriteData("#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}etc/ld.so.conf.d/llvm.conf",ldsoData)
+            #Glibc
+            if usingGlibc
+
+                makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/ld.so.conf.d")
+
+                ldsoData = <<-CODE
+                /usr/lib/llvm/#{majorVersion}/lib
+                CODE
+                fileWriteData("#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}etc/ld.so.conf.d/llvm.conf",ldsoData)
+            else
+            #Musl
+                ldData = <<-CODE
+                /usr/lib/llvm/#{majorVersion}/lib
+                CODE
+                fileAppendData("#{builtSoftwareDirectoryPath}/#{Ism.settings.rootPath}/etc/ld-musl-x86_64.path",ldData)
+            end
 
             directoryContent("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib/llvm/18/bin", matchHidden: true).each do |filePath|
 
