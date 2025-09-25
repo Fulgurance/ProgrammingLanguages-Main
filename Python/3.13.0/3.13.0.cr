@@ -31,18 +31,15 @@ class Target < ISM::Software
         makeSource( arguments:  "DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath} install",
                     path:       buildDirectoryPath)
 
-        if !option("Pass1") && isGreatestVersion
-            makeLink(   target: "python#{majorVersion}",
-                        path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/python",
-                        type:   :symbolicLinkByOverwrite)
+        if !option("Pass1")
+            if isGreatestVersion
+                makeLink(   target: "python#{majorVersion}",
+                            path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/python",
+                            type:   :symbolicLinkByOverwrite)
 
-            makeLink(   target: "python#{majorVersion}.#{minorVersion}",
-                        path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/python#{majorVersion}",
-                        type:   :symbolicLinkByOverwrite)
-
-            makeLink(   target: "pip#{majorVersion}",
-                        path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/pip",
-                        type:   :symbolicLinkByOverwrite)
+            else
+                deleteFile("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/python#{majorVersion}")
+            end
         end
 
         if isGreatestVersion
