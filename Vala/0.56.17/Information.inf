@@ -1,0 +1,21 @@
+PORT
+    ProgrammingLanguages-Main
+NAME
+    Vala
+VERSION
+    0.56.17
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    Programming language using modern high level abstractions without imposing additional runtime requirements and without using a different ABI
+WEBSITE
+    https://wiki.gnome.org/Projects/Vala
+DEPENDENCIES
+        @BaseLibraries-Main:Glib>=2.76.4
+        @BaseLibraries-Main:Gobject-Introspection>=1.76.1
+        @GraphicsLibraries-Main:Graphviz>=12.2.0
+KERNELDEPENDENCIES
+OPTIONS
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES

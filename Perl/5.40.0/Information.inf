@@ -1,0 +1,34 @@
+PORT
+    ProgrammingLanguages-Main
+NAME
+    Perl
+VERSION
+    5.40.0
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    Highly capable, feature-rich programming language
+WEBSITE
+    https://www.perl.org/
+DEPENDENCIES
+        @SecurityLibraries-Main:Libxcrypt>=4.4.36
+        @Shells-Main:Bash>=5.2.37
+        @ProgrammingTools-Main:Binutils>=2.43.0
+        @ProgrammingTools-Main:Gcc>=14.2.0
+        @Components-Main:C-Library>=0.2.0
+        @Utilities-Main:Grep>=3.11.0
+        @Utilities-Main:Sed>=4.9.0
+        @BaseLibraries-Main:Gdbm>=1.23.0
+        @BaseLibraries-Main:Zlib>=1.2.13
+KERNELDEPENDENCIES
+OPTIONS
+    name: Pass1
+    description: Enable the phase 1 of the cross toolchain building
+    active: false
+    dependencies:
+        @ProgrammingTools-Main:Bison>=3.8.2(Pass1)
+    kernelDependencies:
+
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES

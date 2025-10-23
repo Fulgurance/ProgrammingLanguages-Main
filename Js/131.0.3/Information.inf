@@ -1,0 +1,28 @@
+PORT
+    ProgrammingLanguages-Main
+NAME
+    Js
+VERSION
+    131.0.3
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    JavaScript interpreter and libraries
+WEBSITE
+    https://spidermonkey.dev
+DEPENDENCIES
+        @BaseLibraries-Main:Icu>=73.2.0
+        @ProgrammingLanguages-Main:Rust>=1.71.1
+        @Utilities-Main:Which>=2.21.0
+KERNELDEPENDENCIES
+OPTIONS
+    name: Llvm
+    description: Enable llvm support
+    active: false
+    dependencies:
+        @ProgrammingLanguages-Main:Llvm>=16.0.5(Clang)
+    kernelDependencies:
+
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES

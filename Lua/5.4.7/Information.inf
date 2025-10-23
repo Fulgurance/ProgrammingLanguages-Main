@@ -1,0 +1,19 @@
+PORT
+    ProgrammingLanguages-Main
+NAME
+    Lua
+VERSION
+    5.4.7
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    Powerful, efficient, lightweight, embeddable scripting language
+WEBSITE
+    https://www.lua.org
+DEPENDENCIES
+        @SystemBase-Main:SystemBase>=0.2.0
+KERNELDEPENDENCIES
+OPTIONS
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES

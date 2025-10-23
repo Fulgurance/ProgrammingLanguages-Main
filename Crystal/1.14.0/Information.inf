@@ -1,0 +1,22 @@
+PORT
+    ProgrammingLanguages-Main
+NAME
+    Crystal
+VERSION
+    1.14.0
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    A compiled language for humans and computers inspired by Ruby syntax
+WEBSITE
+    https://crystal-lang.org/
+DEPENDENCIES
+        @ProgrammingLanguages-Main:Llvm>=8.0.0
+        @ProgrammingTools-Main:Gc>=7.6.0
+        @NetworkingLibraries-Main:Libevent>=2.1.12
+        @BaseLibraries-Main:Pcre2>=10.37.0
+KERNELDEPENDENCIES
+OPTIONS
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES

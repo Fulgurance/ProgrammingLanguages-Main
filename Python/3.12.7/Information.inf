@@ -1,0 +1,48 @@
+PORT
+    ProgrammingLanguages-Main
+NAME
+    Python
+VERSION
+    3.12.7
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    Programming language that lets you work more quickly and integrate your systems more effectively
+WEBSITE
+    https://www.python.org/
+DEPENDENCIES
+        @Utilities-Main:Gettext>=0.22.5
+        @SecurityLibraries-Main:Libxcrypt>=4.4.36
+        @BaseLibraries-Main:Ncurses>=6.5.0
+        @Shells-Main:Bash>=5.2.37
+        @ProgrammingTools-Main:Binutils>=2.43.0
+        @ProgrammingTools-Main:Gcc>=14.2.0
+        @Components-Main:C-Library>=0.2.0
+        @ProgrammingTools-Main:Pkgconf>=2.3.0
+        @Utilities-Main:Grep>=3.11.0
+        @Utilities-Main:Sed>=4.9.0
+        @Xml-Main:Expat>=2.5.0
+        @BaseLibraries-Main:Gdbm>=1.23.0
+        @BaseLibraries-Main:Libffi>=3.4.4
+        @SecuritySoftwares-Main:Openssl>=3.1.2
+        @Archivers-Main:Bzip2>=1.0.8
+        @BaseLibraries-Main:Zlib>=1.2.13
+KERNELDEPENDENCIES
+OPTIONS
+    name: Pass1
+    description: Enable the phase 1 of the cross toolchain building
+    active: false
+    dependencies:
+        @ProgrammingLanguages-Main:Perl>=5.38.0(Pass1)
+    kernelDependencies:
+
+    name: Sqlite
+    description: Enable sqlite support
+    active: false
+    dependencies:
+        @DatabaseLibraries-Main:Sqlite>=3.42.0
+    kernelDependencies:
+
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES
