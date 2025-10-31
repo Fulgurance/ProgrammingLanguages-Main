@@ -44,7 +44,7 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        usingGlibc = component("C-Library").uniqueDependencyIsEnabled("Glibc")
+        usingGlibc = component("C-Library").uniqueDependencyIsEnabled("@ProgrammingTools-Main:Glibc")
 
         makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin")
 
