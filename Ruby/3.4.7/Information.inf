@@ -1,0 +1,19 @@
+PORT
+    ProgrammingLanguages-Main
+NAME
+    Ruby
+VERSION
+    3.4.7
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    A dynamic, open source programming language with a focus on simplicity and productivity
+WEBSITE
+    https://www.ruby-lang.org
+DEPENDENCIES
+        @BaseLibraries-Main:Libyaml>=0.2.5
+KERNELDEPENDENCIES
+OPTIONS
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES

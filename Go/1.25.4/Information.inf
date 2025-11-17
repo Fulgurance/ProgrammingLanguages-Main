@@ -1,0 +1,19 @@
+PORT
+    ProgrammingLanguages-Main
+NAME
+    Go
+VERSION
+    1.25.4
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    Open source programming language that makes it easy to build simple, reliable, and efficient software
+WEBSITE
+    https://go.googlesource.com/go
+DEPENDENCIES
+        @SystemBase-Main:SystemBase>=0.2.0
+KERNELDEPENDENCIES
+OPTIONS
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES
