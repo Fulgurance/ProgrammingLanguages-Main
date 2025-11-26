@@ -5,7 +5,7 @@ class Target < ISM::Software
 
         luaData = <<-CODE
         V=5.4
-        R=5.4.7
+        R=5.4.8
 
         prefix=/usr
         INSTALL_BIN=${prefix}/bin
@@ -42,7 +42,7 @@ class Target < ISM::Software
                                 INSTALL_TOP=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr \
                                 INSTALL_DATA=\"cp -d\" \
                                 INSTALL_MAN=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/share/man/man1 \
-                                TO_LIB=\"liblua.so liblua.so.5.4 liblua.so.5.4.7\" \
+                                TO_LIB=\"liblua.so liblua.so.5.4 liblua.so.5.4.8\" \
                                 install",
                     path:       buildDirectoryPath)
 
