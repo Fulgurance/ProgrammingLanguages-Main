@@ -1,6 +1,6 @@
-diff -ur Llvm-21.1.5/Llvm-21.1.5/cmake/modules/HandleLLVMOptions.cmake Llvm-21.1.5-new/Llvm-21.1.5/cmake/modules/HandleLLVMOptions.cmake
---- Llvm-21.1.5/Llvm-21.1.5/cmake/modules/HandleLLVMOptions.cmake	2025-11-03 09:35:47.000000000 +0000
-+++ Llvm-21.1.5-new/Llvm-21.1.5/cmake/modules/HandleLLVMOptions.cmake	2025-11-26 19:37:51.511375880 +0000
+diff -ur Llvm-21.1.5/cmake/modules/HandleLLVMOptions.cmake Llvm-21.1.5-new/cmake/modules/HandleLLVMOptions.cmake
+--- Llvm-21.1.5/cmake/modules/HandleLLVMOptions.cmake	2025-11-03 09:35:47.000000000 +0000
++++ Llvm-21.1.5-new/cmake/modules/HandleLLVMOptions.cmake	2025-11-26 19:37:51.511375880 +0000
 @@ -1423,7 +1423,7 @@
    endif()
  endif()
@@ -10,9 +10,9 @@ diff -ur Llvm-21.1.5/Llvm-21.1.5/cmake/modules/HandleLLVMOptions.cmake Llvm-21.1
      "Directory containing third party software used by LLVM (e.g. googletest)")
  
  set(LLVM_UNITTEST_LINK_FLAGS "" CACHE STRING
-diff -ur Llvm-21.1.5/Llvm-21.1.5/CMakeLists.txt Llvm-21.1.5-new/Llvm-21.1.5/CMakeLists.txt
---- Llvm-21.1.5/Llvm-21.1.5/CMakeLists.txt	2025-11-03 09:35:47.000000000 +0000
-+++ Llvm-21.1.5-new/Llvm-21.1.5/CMakeLists.txt	2025-11-26 19:37:51.510548047 +0000
+diff -ur Llvm-21.1.5/CMakeLists.txt Llvm-21.1.5-new/CMakeLists.txt
+--- Llvm-21.1.5/CMakeLists.txt	2025-11-03 09:35:47.000000000 +0000
++++ Llvm-21.1.5-new/CMakeLists.txt	2025-11-26 19:37:51.510548047 +0000
 @@ -3,7 +3,7 @@
  
  include(CMakeDependentOption)
