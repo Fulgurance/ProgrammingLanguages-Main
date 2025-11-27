@@ -9,7 +9,7 @@ class Target < ISM::Software
         target = "#{architecture}-unknown-#{os}-#{abi}"
 
         configData = <<-CODE
-        change-id = 129295
+        change-id = 146435
 
         [llvm]
         targets = "X86"
@@ -23,6 +23,7 @@ class Target < ISM::Software
         locked-deps = true
         tools = ["cargo", "rustdoc"]
         vendor = true
+        local-rebuild = true
 
         [install]
         prefix = "/usr"
