@@ -9,7 +9,7 @@ class Target < ISM::Software
         target = "#{architecture}-unknown-#{os}-#{abi}"
 
         configData = <<-CODE
-        change-id = 129295
+        change-id = ignore
 
         [llvm]
         targets = "X86"
