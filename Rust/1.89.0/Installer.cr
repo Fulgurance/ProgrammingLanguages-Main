@@ -23,7 +23,6 @@ class Target < ISM::Software
         locked-deps = true
         tools = ["cargo", "rustdoc"]
         vendor = true
-        local-rebuild = true
 
         [install]
         prefix = "/usr"
