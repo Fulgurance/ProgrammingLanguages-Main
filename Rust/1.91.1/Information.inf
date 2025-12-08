@@ -1,0 +1,23 @@
+PORT
+    ProgrammingLanguages-Main
+NAME
+    Rust
+VERSION
+    1.91.1
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    Language empowering everyone to build reliable and efficient software
+WEBSITE
+    https://github.com/rust-lang/rust
+DEPENDENCIES
+        @NetworkingLibraries-Main:Curl>=8.2.1
+        @ProgrammingTools-Main:Cmake>=3.27.2
+        @ProgrammingLanguages-Main:Llvm>=17.0.0
+        @NetworkingLibraries-Main:Libssh2>=1.11.0
+        @DatabaseLibraries-Main:Sqlite>=3.42.0
+KERNELDEPENDENCIES
+OPTIONS
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES
